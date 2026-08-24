@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { DestinationGuideView } from "@/components/destinations/DestinationGuideView";
 import {
-  getDestinationGuideBySlug,
+  getPublishedDestinationGuideBySlug,
   getDestinationGuideSlugs,
 } from "@/lib/data/destinations";
 import { buildMetadata } from "@/lib/seo";
@@ -18,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: DestinationPageProps) {
   const { slug } = await params;
-  const guide = getDestinationGuideBySlug(slug);
+  const guide = getPublishedDestinationGuideBySlug(slug);
   if (!guide) {
     return {};
   }
@@ -33,7 +33,7 @@ export default async function DestinationPage({
   params,
 }: DestinationPageProps) {
   const { slug } = await params;
-  const guide = getDestinationGuideBySlug(slug);
+  const guide = getPublishedDestinationGuideBySlug(slug);
 
   if (!guide) {
     notFound();

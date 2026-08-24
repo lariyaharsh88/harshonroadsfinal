@@ -96,3 +96,7 @@ export function matchesDestinationFilters(
 }
 
 export type { DestinationTravelTime };
+
+export function isDestinationActive(guide: DestinationGuide): boolean {
+  return guide.active !== false;
+}

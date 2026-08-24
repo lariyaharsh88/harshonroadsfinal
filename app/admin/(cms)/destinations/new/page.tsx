@@ -10,12 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default function AdminNewDestinationPage() {
-  const destinationSlugs = getAllDestinationGuides().map((item) => item.slug);
+  const destinationOptions = getAllDestinationGuides().map((item) => ({
+    slug: item.slug,
+    name: item.name,
+    active: item.active,
+  }));
 
   return (
     <DestinationFormEditor
       initial={createDestinationTemplate()}
-      destinationSlugs={destinationSlugs}
+      destinationOptions={destinationOptions}
       onSave={createDestinationAction}
       isNew
     />

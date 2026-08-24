@@ -5,6 +5,7 @@ export function createDestinationTemplate(): DestinationGuide {
     id: "new-destination",
     name: "New Destination",
     slug: "new-destination",
+    active: true,
     shortDescription: "Short description for cards and SEO.",
     region: "uttarakhand",
     state: "State name",

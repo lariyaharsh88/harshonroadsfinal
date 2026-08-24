@@ -43,7 +43,7 @@ type SaveResult = { ok: boolean; error?: string; slug?: string };
 
 type DestinationFormEditorProps = {
   initial: DestinationGuide;
-  destinationSlugs: string[];
+  destinationOptions: { slug: string; name: string; active?: boolean }[];
   viewHref?: string;
   onSave: (record: DestinationGuide) => Promise<SaveResult>;
   onDelete?: () => Promise<{ ok: boolean; error?: string }>;
@@ -105,7 +105,7 @@ function WeekendItineraryEditor({
 
 export function DestinationFormEditor({
   initial,
-  destinationSlugs,
+  destinationOptions,
   viewHref,
   onSave,
   onDelete,
@@ -129,6 +129,7 @@ export function DestinationFormEditor({
       id: draft.slug.trim() || draft.id,
       slug: draft.slug.trim(),
       name: draft.name.trim(),
+      active: draft.active !== false,
       highlights: draft.highlights.filter(Boolean),
       whyVisit: draft.whyVisit.filter(Boolean),
       stayNotes: draft.stayNotes.filter(Boolean),
@@ -176,9 +177,14 @@ export function DestinationFormEditor({
     });
   }
 
-  const relatedOptions = destinationSlugs
-    .filter((slug) => slug !== draft.slug)
-    .map((slug) => ({ value: slug, label: slug }));
+  const relatedOptions = destinationOptions
+    .filter((item) => item.slug !== draft.slug)
+    .map((item) => ({
+      value: item.slug,
+      label: item.active === false ? `${item.name} (inactive)` : item.name,
+    }));
+
+  const isActive = draft.active !== false;
 
   return (
     <div className="admin-form space-y-6">
@@ -205,7 +211,7 @@ export function DestinationFormEditor({
             Generate slug from name
           </Button>
         ) : null}
-        {viewHref ? (
+        {viewHref && isActive ? (
           <a
             href={viewHref}
             target="_blank"
@@ -234,6 +240,37 @@ export function DestinationFormEditor({
       ) : null}
 
       <FormSection title="Basics" description="Name, slug and card summary.">
+        <AdminField
+          label="Visibility"
+          hint="Inactive destinations are hidden from the public site, homepage, and sitemap."
+        >
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              aria-pressed={isActive}
+              onClick={() => patch({ active: true })}
+              className={`min-h-10 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                isActive
+                  ? "border-teal bg-teal text-white"
+                  : "border-border bg-white text-muted-strong hover:border-teal/30"
+              }`}
+            >
+              Active — visible on site
+            </button>
+            <button
+              type="button"
+              aria-pressed={!isActive}
+              onClick={() => patch({ active: false })}
+              className={`min-h-10 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                !isActive
+                  ? "border-orange bg-orange/90 text-white"
+                  : "border-border bg-white text-muted-strong hover:border-orange/30"
+              }`}
+            >
+              Inactive — hidden from site
+            </button>
+          </div>
+        </AdminField>
         <div className="grid gap-4 sm:grid-cols-2">
           <AdminField label="Name" hint="Display name on cards and pages.">
             <AdminInput

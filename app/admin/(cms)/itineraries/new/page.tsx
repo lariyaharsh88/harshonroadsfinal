@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AdminNewItineraryPage() {
   const destinationOptions = getAllDestinationGuides().map((guide) => ({
     slug: guide.slug,
-    name: guide.name,
+    name: guide.active === false ? `${guide.name} (inactive)` : guide.name,
   }));
 
   return (

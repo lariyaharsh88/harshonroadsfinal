@@ -3,6 +3,7 @@ import "server-only";
 import { getStoredDestinations } from "@/lib/cms/store";
 import {
   toDestinationCardData,
+  isDestinationActive,
   type DestinationCardData,
   emptyDestinationFilters,
   matchesDestinationFilters,
@@ -17,32 +18,56 @@ export type {
 
 export {
   emptyDestinationFilters,
+  isDestinationActive,
   matchesDestinationFilters,
   toDestinationCardData,
 };
 
-function guidesBySlug(): Map<string, DestinationGuide> {
-  return new Map(getStoredDestinations().map((guide) => [guide.slug, guide]));
-}
-
-export function getAllDestinationGuides(): DestinationGuide[] {
+function allGuides(): DestinationGuide[] {
   return getStoredDestinations();
 }
 
+function publishedGuides(): DestinationGuide[] {
+  return allGuides().filter(isDestinationActive);
+}
+
+function guidesBySlug(guides: DestinationGuide[]): Map<string, DestinationGuide> {
+  return new Map(guides.map((guide) => [guide.slug, guide]));
+}
+
+/** All destinations — including inactive (admin CMS). */
+export function getAllDestinationGuides(): DestinationGuide[] {
+  return allGuides();
+}
+
+/** Active destinations only — public site. */
+export function getPublishedDestinationGuides(): DestinationGuide[] {
+  return publishedGuides();
+}
+
+/** Any destination by slug — admin CMS. */
 export function getDestinationGuideBySlug(
   slug: string,
 ): DestinationGuide | undefined {
-  return guidesBySlug().get(slug);
+  return guidesBySlug(allGuides()).get(slug);
+}
+
+/** Active destination by slug — public site. */
+export function getPublishedDestinationGuideBySlug(
+  slug: string,
+): DestinationGuide | undefined {
+  const guide = guidesBySlug(allGuides()).get(slug);
+  return guide && isDestinationActive(guide) ? guide : undefined;
 }
 
 export function getDestinationGuideSlugs(): string[] {
-  return getStoredDestinations().map((guide) => guide.slug);
+  return publishedGuides().map((guide) => guide.slug);
 }
 
 export function getRelatedDestinationGuides(
   slugs: string[],
 ): DestinationGuide[] {
-  const lookup = guidesBySlug();
+  const lookup = guidesBySlug(publishedGuides());
   return slugs.flatMap((slug) => {
     const guide = lookup.get(slug);
     return guide ? [guide] : [];
@@ -50,5 +75,5 @@ export function getRelatedDestinationGuides(
 }
 
 export function getDestinationCards(): DestinationCardData[] {
-  return getStoredDestinations().map(toDestinationCardData);
+  return publishedGuides().map(toDestinationCardData);
 }

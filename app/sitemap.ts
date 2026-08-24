@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { getLiveTools } from "@/lib/tools/catalog";
-import { getAllDestinationGuides } from "@/lib/data/destinations";
+import { getPublishedDestinationGuides } from "@/lib/data/destinations";
 import { getAllItineraries } from "@/lib/data/itineraries";
 
 const publicRoutes = [
@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const destinationPages = getAllDestinationGuides().map((destination) => ({
+  const destinationPages = getPublishedDestinationGuides().map((destination) => ({
     url: absoluteUrl(`/destinations/${destination.slug}`),
     lastModified,
     changeFrequency: "monthly" as const,

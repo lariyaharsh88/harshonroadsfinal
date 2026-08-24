@@ -29,7 +29,7 @@ export default async function AdminItineraryEditPage({
 
   const destinationOptions = getAllDestinationGuides().map((guide) => ({
     slug: guide.slug,
-    name: guide.name,
+    name: guide.active === false ? `${guide.name} (inactive)` : guide.name,
   }));
 
   return (

@@ -84,6 +84,8 @@ export type DestinationGuide = {
   id: string;
   name: string;
   slug: string;
+  /** When false, hidden from the public site. Defaults to true when omitted. */
+  active?: boolean;
   shortDescription: string;
   region: DestinationRegion;
   state: string;

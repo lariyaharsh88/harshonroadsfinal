@@ -29,12 +29,16 @@ export default async function AdminDestinationEditPage({
     notFound();
   }
 
-  const destinationSlugs = getAllDestinationGuides().map((item) => item.slug);
+  const destinationOptions = getAllDestinationGuides().map((item) => ({
+    slug: item.slug,
+    name: item.name,
+    active: item.active,
+  }));
 
   return (
     <DestinationFormEditor
       initial={destination}
-      destinationSlugs={destinationSlugs}
+      destinationOptions={destinationOptions}
       viewHref={`/destinations/${destination.slug}`}
       onSave={saveDestinationAction.bind(null, slug)}
       onDelete={deleteDestinationAction.bind(null, slug)}
