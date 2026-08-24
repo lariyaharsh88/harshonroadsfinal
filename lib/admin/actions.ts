@@ -12,14 +12,6 @@ import {
 import type { DestinationGuide } from "@/lib/data/destinations/types";
 import type { ItineraryRecord } from "@/lib/data/itineraries/types";
 
-function parseJsonRecord<T>(raw: string, label: string): T {
-  try {
-    return JSON.parse(raw) as T;
-  } catch {
-    throw new Error(`Invalid JSON for ${label}.`);
-  }
-}
-
 function revalidateDestinationPaths(slug?: string): void {
   revalidatePath("/");
   revalidatePath("/destinations");
@@ -37,6 +29,20 @@ function revalidateItineraryPaths(slug?: string): void {
   if (slug) {
     revalidatePath(`/itineraries/${slug}`);
   }
+}
+
+function validateDestination(record: DestinationGuide): string | null {
+  if (!record.slug?.trim() || !record.name?.trim()) {
+    return "Destination name and slug are required.";
+  }
+  return null;
+}
+
+function validateItinerary(record: ItineraryRecord): string | null {
+  if (!record.slug?.trim() || !record.title?.trim()) {
+    return "Itinerary title and slug are required.";
+  }
+  return null;
 }
 
 export async function adminLoginAction(
@@ -61,13 +67,13 @@ export async function adminLogoutAction(): Promise<void> {
 
 export async function saveDestinationAction(
   originalSlug: string,
-  rawJson: string,
+  record: DestinationGuide,
 ): Promise<{ ok: boolean; error?: string; slug?: string }> {
   await requireAdmin();
 
-  const record = parseJsonRecord<DestinationGuide>(rawJson, "destination");
-  if (!record.slug?.trim() || !record.name?.trim()) {
-    return { ok: false, error: "Destination name and slug are required." };
+  const validationError = validateDestination(record);
+  if (validationError) {
+    return { ok: false, error: validationError };
   }
 
   const destinations = getStoredDestinations();
@@ -91,13 +97,13 @@ export async function saveDestinationAction(
 }
 
 export async function createDestinationAction(
-  rawJson: string,
+  record: DestinationGuide,
 ): Promise<{ ok: boolean; error?: string; slug?: string }> {
   await requireAdmin();
 
-  const record = parseJsonRecord<DestinationGuide>(rawJson, "destination");
-  if (!record.slug?.trim() || !record.name?.trim()) {
-    return { ok: false, error: "Destination name and slug are required." };
+  const validationError = validateDestination(record);
+  if (validationError) {
+    return { ok: false, error: validationError };
   }
 
   const destinations = getStoredDestinations();
@@ -130,13 +136,13 @@ export async function deleteDestinationAction(
 
 export async function saveItineraryAction(
   originalSlug: string,
-  rawJson: string,
+  record: ItineraryRecord,
 ): Promise<{ ok: boolean; error?: string; slug?: string }> {
   await requireAdmin();
 
-  const record = parseJsonRecord<ItineraryRecord>(rawJson, "itinerary");
-  if (!record.slug?.trim() || !record.title?.trim()) {
-    return { ok: false, error: "Itinerary title and slug are required." };
+  const validationError = validateItinerary(record);
+  if (validationError) {
+    return { ok: false, error: validationError };
   }
 
   const itineraries = getStoredItineraries();
@@ -160,13 +166,13 @@ export async function saveItineraryAction(
 }
 
 export async function createItineraryAction(
-  rawJson: string,
+  record: ItineraryRecord,
 ): Promise<{ ok: boolean; error?: string; slug?: string }> {
   await requireAdmin();
 
-  const record = parseJsonRecord<ItineraryRecord>(rawJson, "itinerary");
-  if (!record.slug?.trim() || !record.title?.trim()) {
-    return { ok: false, error: "Itinerary title and slug are required." };
+  const validationError = validateItinerary(record);
+  if (validationError) {
+    return { ok: false, error: validationError };
   }
 
   const itineraries = getStoredItineraries();

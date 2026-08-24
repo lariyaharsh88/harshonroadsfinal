@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { JsonRecordEditor } from "@/components/admin/JsonRecordEditor";
+import { DestinationFormEditor } from "@/components/admin/DestinationFormEditor";
 import {
   deleteDestinationAction,
   saveDestinationAction,
 } from "@/lib/admin/actions";
-import { getDestinationGuideBySlug } from "@/lib/data/destinations";
+import {
+  getAllDestinationGuides,
+  getDestinationGuideBySlug,
+} from "@/lib/data/destinations";
 
 export const metadata: Metadata = {
   title: "Edit destination",
@@ -26,14 +29,12 @@ export default async function AdminDestinationEditPage({
     notFound();
   }
 
-  const initialJson = `${JSON.stringify(destination, null, 2)}\n`;
+  const destinationSlugs = getAllDestinationGuides().map((item) => item.slug);
 
   return (
-    <JsonRecordEditor
-      entity="destinations"
-      title={`Edit ${destination.name}`}
-      description="Edit the full destination record as structured JSON. Save validates required fields and updates the public destination page."
-      initialJson={initialJson}
+    <DestinationFormEditor
+      initial={destination}
+      destinationSlugs={destinationSlugs}
       viewHref={`/destinations/${destination.slug}`}
       onSave={saveDestinationAction.bind(null, slug)}
       onDelete={deleteDestinationAction.bind(null, slug)}

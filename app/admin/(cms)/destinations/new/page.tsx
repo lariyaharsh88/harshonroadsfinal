@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { JsonRecordEditor } from "@/components/admin/JsonRecordEditor";
+import { DestinationFormEditor } from "@/components/admin/DestinationFormEditor";
 import { createDestinationAction } from "@/lib/admin/actions";
 import { createDestinationTemplate } from "@/lib/cms/templates/destination";
+import { getAllDestinationGuides } from "@/lib/data/destinations";
 
 export const metadata: Metadata = {
   title: "New destination",
@@ -9,15 +10,14 @@ export const metadata: Metadata = {
 };
 
 export default function AdminNewDestinationPage() {
-  const initialJson = `${JSON.stringify(createDestinationTemplate(), null, 2)}\n`;
+  const destinationSlugs = getAllDestinationGuides().map((item) => item.slug);
 
   return (
-    <JsonRecordEditor
-      entity="destinations"
-      title="New destination"
-      description="Create a new destination guide. Update the slug, copy and structured fields, then save."
-      initialJson={initialJson}
+    <DestinationFormEditor
+      initial={createDestinationTemplate()}
+      destinationSlugs={destinationSlugs}
       onSave={createDestinationAction}
+      isNew
     />
   );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { JsonRecordEditor } from "@/components/admin/JsonRecordEditor";
+import { ItineraryFormEditor } from "@/components/admin/ItineraryFormEditor";
 import { createItineraryAction } from "@/lib/admin/actions";
 import { createItineraryTemplate } from "@/lib/cms/templates/itinerary";
+import { getAllDestinationGuides } from "@/lib/data/destinations";
 
 export const metadata: Metadata = {
   title: "New itinerary",
@@ -9,15 +10,17 @@ export const metadata: Metadata = {
 };
 
 export default function AdminNewItineraryPage() {
-  const initialJson = `${JSON.stringify(createItineraryTemplate(), null, 2)}\n`;
+  const destinationOptions = getAllDestinationGuides().map((guide) => ({
+    slug: guide.slug,
+    name: guide.name,
+  }));
 
   return (
-    <JsonRecordEditor
-      entity="itineraries"
-      title="New itinerary"
-      description="Create a new itinerary record. Update slug, day plans and budget bands, then save."
-      initialJson={initialJson}
+    <ItineraryFormEditor
+      initial={createItineraryTemplate()}
+      destinationOptions={destinationOptions}
       onSave={createItineraryAction}
+      isNew
     />
   );
 }

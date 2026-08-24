@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { JsonRecordEditor } from "@/components/admin/JsonRecordEditor";
+import { ItineraryFormEditor } from "@/components/admin/ItineraryFormEditor";
 import {
   deleteItineraryAction,
   saveItineraryAction,
 } from "@/lib/admin/actions";
+import { getAllDestinationGuides } from "@/lib/data/destinations";
 import { getItineraryBySlug } from "@/lib/data/itineraries";
 
 export const metadata: Metadata = {
@@ -26,14 +27,15 @@ export default async function AdminItineraryEditPage({
     notFound();
   }
 
-  const initialJson = `${JSON.stringify(itinerary, null, 2)}\n`;
+  const destinationOptions = getAllDestinationGuides().map((guide) => ({
+    slug: guide.slug,
+    name: guide.name,
+  }));
 
   return (
-    <JsonRecordEditor
-      entity="itineraries"
-      title={`Edit ${itinerary.title}`}
-      description="Edit the full itinerary record as structured JSON. Day plans, budget bands and FAQs stay structured — not HTML."
-      initialJson={initialJson}
+    <ItineraryFormEditor
+      initial={itinerary}
+      destinationOptions={destinationOptions}
       viewHref={`/itineraries/${itinerary.slug}`}
       onSave={saveItineraryAction.bind(null, slug)}
       onDelete={deleteItineraryAction.bind(null, slug)}
