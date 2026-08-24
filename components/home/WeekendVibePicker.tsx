@@ -19,7 +19,7 @@ export function WeekendVibePicker() {
   const [selected, setSelected] = useState<(typeof vibes)[number]>("Mountains");
 
   return (
-    <div className="rounded-[1.75rem] border border-border bg-surface p-6 shadow-[0_10px_30px_rgba(17,19,24,0.05)] sm:p-8">
+    <div className="ai-panel rounded-[1.75rem] border border-border p-6 sm:p-8">
       <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-blue">
         Got 48 hours?
       </p>
@@ -36,10 +36,10 @@ export function WeekendVibePicker() {
             type="button"
             onClick={() => setSelected(vibe)}
             className={cn(
-              "min-h-11 rounded-full border px-4 text-sm font-semibold transition",
+              "min-h-10 rounded-full border px-4 py-2 text-sm font-semibold transition duration-200",
               selected === vibe
-                ? "border-foreground bg-foreground text-white"
-                : "border-border bg-surface-raised text-muted-strong hover:border-foreground/30 hover:text-foreground",
+                ? "border-blue bg-blue text-white shadow-[0_4px_16px_rgba(37,99,235,0.25)]"
+                : "border-border bg-white text-muted-strong hover:border-blue/25 hover:text-foreground",
             )}
           >
             {vibe}

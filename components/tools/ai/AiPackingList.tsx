@@ -5,7 +5,6 @@ import {
   useState,
   useSyncExternalStore,
   type FormEvent,
-  type ReactNode,
 } from "react";
 import { generateAiPackingListAction } from "@/lib/ai/actions/generate-ai-packing-list";
 import {
@@ -26,10 +25,19 @@ import {
 } from "@/lib/ai/schemas/ai-packing-list";
 import { ChoiceButton } from "@/components/tools/weekend/ChoiceButton";
 import { ShareButton } from "@/components/tools/ShareButton";
-import { ToolInput } from "@/components/tools/ToolInput";
 import { ToolSelect } from "@/components/tools/ToolSelect";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
+import {
+  AiChip,
+  AiError,
+  AiFieldRow,
+  AiGenerateButton,
+  AiInlineInput,
+  AiSelect,
+  AiToolShell,
+} from "@/components/tools/ai/shared/AiShell";
+import { AiPlannerFrame } from "@/components/tools/ai/shared/AiPlannerFrame";
 import { destinations } from "@/lib/tools/destinations";
 import {
   getAiPackingListServerSnapshot,
@@ -132,26 +140,6 @@ function inputFromResult(result: AiPackingListResult): AiPackingListInput {
   };
 }
 
-function FilterBlock({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="mt-6">
-      <p className="mb-3 text-sm font-semibold">{title}</p>
-      {children}
-    </div>
-  );
-}
-
-function ChoiceGrid({ children }: { children: ReactNode }) {
-  return (
-    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{children}</div>
-  );
-}
 
 export function AiPackingList() {
   const storedRaw = useSyncExternalStore(
@@ -542,167 +530,136 @@ export function AiPackingList() {
   }
 
   return (
-    <Card>
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-        Trip details
-      </p>
-      <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-        AI Packing List
-      </h2>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-        Choose a HarshOnRoads destination, then duration, season, transport,
-        trip type and activities. The list is a sketch, not a shop order. Ticks
-        and custom items save in this browser. No login.
-      </p>
+    <AiPlannerFrame
+      pending={pending}
+      loadingContext={draft.destinationSlug}
+      toolLabel="packing list"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void generate();
+      }}
+    >
+      <AiToolShell
+        title="Your packing list, one brief"
+        hint="Pick trip details — one generate. Ticks save in this browser only."
+        footer={
+          <>
+            {error ? <AiError message={error} /> : null}
+            {statusNote ? (
+              <p className="mt-3 text-sm text-teal" role="status">
+                {statusNote}
+              </p>
+            ) : null}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <AiGenerateButton
+                type="submit"
+                disabled={!input}
+                label="Generate my plan"
+                pendingLabel="Writing list…"
+              />
+              {storedResult ? (
+                <button
+                  type="button"
+                  disabled={pending}
+                  onClick={() => setEditing(false)}
+                  className="inline-flex min-h-10 items-center justify-center rounded-full border border-border px-5 text-sm font-semibold disabled:opacity-40"
+                >
+                  Back to saved list
+                </button>
+              ) : null}
+            </div>
+          </>
+        }
+      >
+      <AiSelect
+        label="Destination"
+        name="destination"
+        value={draft.destinationSlug}
+        onChange={(value) =>
+          setDraft((current) => ({ ...current, destinationSlug: value }))
+        }
+        options={destinationOptions}
+      />
 
-      <div className="mt-8 max-w-xl">
-        <ToolSelect
-          name="destination"
-          label="Destination"
-          value={draft.destinationSlug}
-          options={destinationOptions}
-          onChange={(value) =>
-            setDraft((current) => ({ ...current, destinationSlug: value }))
-          }
-        />
-      </div>
-
-      <FilterBlock title="Duration">
-        <ChoiceGrid>
-          {packingDurations.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.duration === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, duration: value }))
-              }
-            >
-              {packingDurationLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
-
-      <FilterBlock title="Season">
-        <ChoiceGrid>
-          {packingSeasons.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.season === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, season: value }))
-              }
-            >
-              {packingSeasonLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
-
-      <FilterBlock title="Transport">
-        <ChoiceGrid>
-          {transports.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.transport === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, transport: value }))
-              }
-            >
-              {transportLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
-
-      <FilterBlock title="Trip type">
-        <ChoiceGrid>
-          {packingTripTypes.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.tripType === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, tripType: value }))
-              }
-            >
-              {packingTripTypeLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
-
-      <FilterBlock title="Activities">
-        <ChoiceGrid>
-          {interests.map((value) => (
-            <ChoiceButton
-              key={value}
-              multi
-              selected={draft.activities.includes(value)}
-              onClick={() => toggleActivity(value)}
-            >
-              {interestLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-        <p className="mt-3 text-xs leading-5 text-muted">
-          Pick 1–8. These shape activity-specific and photography items.
-        </p>
-      </FilterBlock>
-
-      <div className="mt-6 max-w-xs">
-        <ToolInput
-          name="travellerCount"
-          label="Travellers"
-          value={String(draft.travellerCount)}
-          min={1}
-          max={12}
-          step={1}
-          helper="Used to scale clothing and toiletries. Not a hotel occupancy check."
-          onChange={(value) =>
-            setDraft((current) => ({
-              ...current,
-              travellerCount: Math.min(
-                12,
-                Math.max(1, Math.round(Number(value) || 1)),
-              ),
-            }))
-          }
-        />
-      </div>
-
-      {error ? (
-        <p className="mt-6 text-sm text-accent" role="alert">
-          {error}
-        </p>
-      ) : null}
-      {statusNote ? (
-        <p className="mt-3 text-sm text-accent" role="status">
-          {statusNote}
-        </p>
-      ) : null}
-
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <button
-          type="button"
-          disabled={!input || pending}
-          onClick={() => {
-            void generate();
-          }}
-          className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#fff8ef] disabled:opacity-40"
-        >
-          {pending ? "Writing list…" : "Generate packing list"}
-        </button>
-        {storedResult ? (
-          <button
-            type="button"
-            disabled={pending}
-            onClick={() => setEditing(false)}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold disabled:opacity-40"
+      <AiFieldRow label="Duration">
+        {packingDurations.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.duration === value}
+            onClick={() => setDraft((current) => ({ ...current, duration: value }))}
           >
-            Back to saved list
-          </button>
-        ) : null}
-      </div>
-    </Card>
+            {packingDurationLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Season">
+        {packingSeasons.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.season === value}
+            onClick={() => setDraft((current) => ({ ...current, season: value }))}
+          >
+            {packingSeasonLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Transport">
+        {transports.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.transport === value}
+            onClick={() => setDraft((current) => ({ ...current, transport: value }))}
+          >
+            {transportLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Trip type">
+        {packingTripTypes.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.tripType === value}
+            onClick={() => setDraft((current) => ({ ...current, tripType: value }))}
+          >
+            {packingTripTypeLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Activities" hint="Pick 1–8">
+        {interests.map((value) => (
+          <AiChip
+            key={value}
+            multi
+            selected={draft.activities.includes(value)}
+            onClick={() => toggleActivity(value)}
+          >
+            {interestLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiInlineInput
+        label="Travellers"
+        name="travellerCount"
+        type="number"
+        min={1}
+        max={12}
+        value={String(draft.travellerCount)}
+        onChange={(value) =>
+          setDraft((current) => ({
+            ...current,
+            travellerCount: Math.min(
+              12,
+              Math.max(1, Math.round(Number(value) || 1)),
+            ),
+          }))
+        }
+      />
+      </AiToolShell>
+    </AiPlannerFrame>
   );
 }

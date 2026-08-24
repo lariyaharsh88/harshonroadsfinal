@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState } from "react";
 import { generateTravelContentAction } from "@/lib/ai/actions/generate-travel-content";
 import {
   contentCreatorAudienceLabels,
@@ -14,10 +14,18 @@ import {
 } from "@/lib/ai/schemas/ai-travel-content-creator";
 import { CopyBlock } from "@/components/tools/CopyBlock";
 import { ShareButton } from "@/components/tools/ShareButton";
-import { ToolSelect } from "@/components/tools/ToolSelect";
-import { ChoiceButton } from "@/components/tools/weekend/ChoiceButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
+import {
+  AiChip,
+  AiError,
+  AiFieldRow,
+  AiGenerateButton,
+  AiPromptInput,
+  AiSelect,
+  AiToolShell,
+} from "@/components/tools/ai/shared/AiShell";
+import { AiPlannerFrame } from "@/components/tools/ai/shared/AiPlannerFrame";
 import { destinations } from "@/lib/tools/destinations";
 
 const destinationOptions = [...destinations]
@@ -62,27 +70,6 @@ function toInput(draft: Draft): TravelContentCreatorInput | null {
 
 function numbered(items: string[]): string {
   return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
-}
-
-function FilterBlock({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="mt-6">
-      <p className="mb-3 text-sm font-semibold">{title}</p>
-      {children}
-    </div>
-  );
-}
-
-function ChoiceGrid({ children }: { children: ReactNode }) {
-  return (
-    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{children}</div>
-  );
 }
 
 export function AiTravelContentCreator() {
@@ -307,57 +294,52 @@ export function AiTravelContentCreator() {
   }
 
   return (
-    <Card>
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-        Creator brief
-      </p>
-      <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-        AI Travel Content Creator
-      </h2>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-        Draft titles, scripts and outlines for a HarshOnRoads destination.
-        Copy is a starting point, not a travel diary, unless you say you
-        went. Nothing is stored. No login.
-      </p>
+    <AiPlannerFrame
+      pending={pending}
+      loadingContext={draft.destinationSlug}
+      toolLabel="content creator"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void generate();
+      }}
+    >
+      <AiToolShell
+        title="Your creator brief, one step"
+        hint="Destination, brief and platform — one generate. Copy is a draft, not stored."
+        footer={
+          <>
+            {error ? <AiError message={error} /> : null}
+            <AiGenerateButton
+              type="submit"
+              disabled={!input}
+              label="Generate my plan"
+              pendingLabel="Writing draft…"
+            />
+          </>
+        }
+      >
+      <AiSelect
+        label="Destination"
+        name="destination"
+        value={draft.destinationSlug}
+        onChange={(value) =>
+          setDraft((current) => ({ ...current, destinationSlug: value }))
+        }
+        options={destinationOptions}
+      />
 
-      <div className="mt-8 max-w-xl">
-        <ToolSelect
-          name="destination"
-          label="Destination"
-          value={draft.destinationSlug}
-          options={destinationOptions}
-          onChange={(value) =>
-            setDraft((current) => ({ ...current, destinationSlug: value }))
-          }
-        />
-      </div>
+      <AiPromptInput
+        name="tripDescription"
+        value={draft.tripDescription}
+        onChange={(value) =>
+          setDraft((current) => ({ ...current, tripDescription: value }))
+        }
+        placeholder={exampleNotes}
+        hint="At least 20 characters. Say if you visited — we won't invent a trip you didn't take."
+        rows={4}
+      />
 
-      <label className="mt-6 block">
-        <span className="mb-2 block text-sm font-medium text-muted-strong">
-          Trip description
-        </span>
-        <textarea
-          name="tripDescription"
-          value={draft.tripDescription}
-          rows={5}
-          maxLength={1500}
-          placeholder={exampleNotes}
-          autoComplete="off"
-          onChange={(event) =>
-            setDraft((current) => ({
-              ...current,
-              tripDescription: event.target.value,
-            }))
-          }
-          className="w-full rounded-xl border border-border bg-background px-3 py-3 text-base text-foreground outline-none placeholder:text-muted/70 focus:border-foreground/30"
-        />
-        <span className="mt-1.5 block text-xs leading-5 text-muted">
-          At least 20 characters. Say if you visited. Do not ask the tool to
-          invent a trip you did not take.
-        </span>
-      </label>
-
-      <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm leading-6">
+      <label className="flex cursor-pointer items-center gap-2.5 pt-2 text-sm text-muted-strong">
         <input
           type="checkbox"
           checked={draft.hasVisited}
@@ -367,80 +349,47 @@ export function AiTravelContentCreator() {
               hasVisited: event.target.checked,
             }))
           }
-          className="mt-1 size-4 accent-[var(--accent)]"
+          className="size-4 accent-blue"
         />
-        <span>
-          I have been to this destination. Leave unchecked unless that is
-          true — the draft will not pretend you went.
-        </span>
+        I have visited this destination
       </label>
 
-      <FilterBlock title="Target audience">
-        <ChoiceGrid>
-          {contentCreatorAudiences.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.audience === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, audience: value }))
-              }
-            >
-              {contentCreatorAudienceLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
+      <AiFieldRow label="Audience">
+        {contentCreatorAudiences.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.audience === value}
+            onClick={() => setDraft((current) => ({ ...current, audience: value }))}
+          >
+            {contentCreatorAudienceLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
 
-      <FilterBlock title="Tone">
-        <ChoiceGrid>
-          {contentCreatorTones.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.tone === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, tone: value }))
-              }
-            >
-              {contentCreatorToneLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
+      <AiFieldRow label="Tone">
+        {contentCreatorTones.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.tone === value}
+            onClick={() => setDraft((current) => ({ ...current, tone: value }))}
+          >
+            {contentCreatorToneLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
 
-      <FilterBlock title="Platform">
-        <ChoiceGrid>
-          {contentCreatorPlatforms.map((value) => (
-            <ChoiceButton
-              key={value}
-              selected={draft.platform === value}
-              onClick={() =>
-                setDraft((current) => ({ ...current, platform: value }))
-              }
-            >
-              {contentCreatorPlatformLabels[value]}
-            </ChoiceButton>
-          ))}
-        </ChoiceGrid>
-      </FilterBlock>
-
-      {error ? (
-        <p className="mt-6 text-sm text-accent" role="alert">
-          {error}
-        </p>
-      ) : null}
-
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <button
-          type="button"
-          disabled={!input || pending}
-          onClick={() => {
-            void generate();
-          }}
-          className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#fff8ef] disabled:opacity-40"
-        >
-          {pending ? "Writing draft…" : "Generate content draft"}
-        </button>
-      </div>
-    </Card>
+      <AiFieldRow label="Platform">
+        {contentCreatorPlatforms.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.platform === value}
+            onClick={() => setDraft((current) => ({ ...current, platform: value }))}
+          >
+            {contentCreatorPlatformLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+      </AiToolShell>
+    </AiPlannerFrame>
   );
 }

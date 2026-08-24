@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AmbientBackground } from "@/components/layout/AmbientBackground";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
@@ -6,6 +7,7 @@ import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-full flex-col">
+      <AmbientBackground />
       <a href="#main" className="skip-link">
         Skip to content
       </a>

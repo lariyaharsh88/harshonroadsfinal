@@ -1,0 +1,1962 @@
+[
+  {
+    "id": "delhi-to-rishikesh-2-day",
+    "slug": "delhi-to-rishikesh-2-day-itinerary",
+    "title": "Delhi to Rishikesh 2-Day Itinerary",
+    "shortDescription": "A 2-day, 1-night Ganga-side weekend from Delhi NCR: travel, a riverfront evening, and a lighter second morning before the return.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "rishikesh",
+    "destinationName": "Rishikesh",
+    "days": 2,
+    "nights": 1,
+    "duration": "2-days",
+    "tripType": "weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus",
+      "train"
+    ],
+    "travelStyle": "adventure",
+    "budgetCategory": "mid",
+    "estimatedBudget": "Typically ₹6,000–₹12,000 per person for 2 days, depending on stay and whether you book activities.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Fuel or tickets often sit in a mid band for this distance; split a car if you can."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "One night near the river or in town. Rates swing on long weekends."
+      },
+      {
+        "category": "Food",
+        "estimate": "Cafe and simple vegetarian meals. Budget extra if you eat at stay restaurants."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Optional. River activities are seasonal and paid separately — confirm locally."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls if you self-drive. Parking in town can be tight on Saturdays."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Keep a small buffer for water, snacks and an unplanned taxi."
+      }
+    ],
+    "bestFor": [
+      "solo",
+      "couples",
+      "friends"
+    ],
+    "interests": [
+      "river",
+      "walking",
+      "cafes",
+      "optional adventure"
+    ],
+    "bestTimeToVisit": "Often comfortable outside peak monsoon. River activities follow local seasons and rules — check before you pack for the water.",
+    "heroImage": null,
+    "overview": "This plan assumes you can leave Delhi NCR early on day one. It is a sketch, not a live timetable. Keep one activity, not five. Two nights is kinder if you hate highway nights; this 1-night version still works if you stay disciplined.",
+    "highlights": [
+      "Early departure so you are not only on NH traffic after dark",
+      "A riverfront evening instead of a packed adventure checklist",
+      "A buffer morning before the return to NCR"
+    ],
+    "routeSummary": "Delhi NCR toward Haridwar–Rishikesh by road, or train toward the same belt plus a last-mile taxi. Treat distance as a roughly 5–7 hour road category in ordinary traffic — not a guaranteed clock time.",
+    "travelTimeCategory": "About 5–7 hours each way by road in ordinary traffic (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Travel and settle by the river",
+        "summary": "Leave NCR early, check in, and keep the evening for a walk rather than a stacked activity list.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Rishikesh",
+          "location": "Highway toward Haridwar / Rishikesh",
+          "description": "Aim to leave before peak city traffic. If you train, pick a morning service and add last-mile time. Do not treat any app ETA as a promise.",
+          "travelNote": "Fog, rain and weekend jams can add hours. Carry water and a stretch stop."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Check in and a short neighbourhood walk",
+          "location": "Town or river-adjacent stay area",
+          "description": "Drop bags, drink water, and walk a nearby lane or ghat. Skip booking every operator on arrival.",
+          "foodSuggestion": "A simple lunch near your stay. Cafe hours vary — ask, do not assume."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Riverfront evening",
+          "location": "Ghat / river walk (local rules apply)",
+          "description": "An aarti or a quiet walk, depending on crowds and your energy. Photography rules exist in places — follow them.",
+          "foodSuggestion": "Early dinner. Town nights are not a club circuit."
+        },
+        "placesToVisit": [
+          "Riverfront / ghat area",
+          "Stay neighbourhood lanes"
+        ],
+        "activities": [
+          "Walking",
+          "Optional cafe time",
+          "Optional seasonal outdoor activity next morning only if booked"
+        ],
+        "foodSuggestions": [
+          "Cafe plates",
+          "Simple North Indian / vegetarian rooms"
+        ],
+        "travelNotes": [
+          "Park once if you self-drive; circling for spots wastes the evening.",
+          "If you ride, stop while it is still daylight on the last stretch."
+        ],
+        "stayArea": "River-adjacent, in-town, or slightly uphill — pick one pocket and stay put. No specific hotel is endorsed here.",
+        "estimatedDailyBudget": "Day 1 often includes the heavier transport share. Treat the total trip range as the guide, not this line as a quote."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Light morning and return",
+        "summary": "One outdoor or cafe block, then a conservative departure so you are not crawling into NCR at midnight.",
+        "morning": {
+          "period": "morning",
+          "title": "Walk, cafe, or a booked activity",
+          "location": "Town / river belt",
+          "description": "If rafting or similar is in season and already confirmed, keep it to one slot. Otherwise a trail or cafe is enough.",
+          "travelNote": "Activities can be cancelled for water levels or rules. Have a walking backup."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Rishikesh → Delhi NCR",
+          "description": "Leave with a buffer. Sunday returns toward NCR routinely slow down. Trains need station-side time too.",
+          "travelNote": "Do not add Haridwar sightseeing unless you already have slack."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "Plan a simple meal at home or a known stop. The itinerary ends when you are off the highway, not at a third town."
+        },
+        "placesToVisit": [
+          "One morning pocket only"
+        ],
+        "activities": [
+          "Optional booked activity",
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast near stay",
+          "Pack snacks for the highway"
+        ],
+        "travelNotes": [
+          "Fuel up before the last empty stretch if you self-drive."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Mostly transport and meals. Activities are extra if you used them."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Common self-drive or hired-car pattern via the Haridwar belt.",
+        "note": "Tolls, fog and weekend traffic change the clock. This is not a live ETA."
+      },
+      {
+        "mode": "bike",
+        "summary": "A frequent rider weekend. Treat it as a full riding day, not a city hop.",
+        "note": "Daylight on hills/river-belt roads matters. Gear is not optional."
+      },
+      {
+        "mode": "bus",
+        "summary": "State and private buses run this corridor. Last-mile from a bus stand still takes time.",
+        "note": "Verify current services before you travel. Do not rely on an old blog timetable."
+      },
+      {
+        "mode": "train",
+        "summary": "Trains toward Haridwar / nearby stations plus taxi or local bus into town.",
+        "note": "Check IRCTC or the current enquiry for the date you travel. This page does not list train numbers."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "River walk",
+        "description": "The simplest reason to come — keep it unhurried.",
+        "category": "Walk"
+      },
+      {
+        "name": "Cafe morning",
+        "description": "Useful if you skip paid adventure or if operators are closed.",
+        "category": "Food"
+      },
+      {
+        "name": "Seasonal river activity",
+        "description": "Only when local rules and water levels allow. Book and confirm, do not assume.",
+        "category": "Adventure"
+      }
+    ],
+    "travelTips": [
+      "Leave NCR earlier than you think you need to.",
+      "Carry ID if you might book a registered activity.",
+      "Weekend crowds around popular ghats are normal — pick a quieter lane if that bothers you.",
+      "Monsoon weekends need a road check, not just a weather emoji."
+    ],
+    "packingSuggestions": [
+      "Light layers, modest clothing for ghats, and a rain shell in monsoon.",
+      "Comfortable walking shoes. Flip-flops only as backup.",
+      "Power bank and a refillable bottle."
+    ],
+    "thingsToKnow": [
+      "This is not a luxury hill-station mall weekend.",
+      "Nightlife is limited. Plan evenings around walking and dinner.",
+      "Estimates on this page are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need for Rishikesh from Delhi?",
+        "answer": "Two days / one night is the common weekend shape. Three days is more comfortable. A same-day turnaround is usually a highway trip, not a visit."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Many people land in a mid band, often spoken of as roughly ₹6,000–₹12,000 per person for two days. Stay standard and activities move that number. It is not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes if you leave early on day one and do not stack Haridwar, Mussoorie and rafting into the same 36 hours."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car is the default for groups. Train plus taxi reduces night driving. Bike is for experienced riders. Bus works if you accept last-mile time."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Walking shoes, a layer, modest clothes for ghats, and rain cover in monsoon. Use the Weekend Packing List tool to tick items."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Swap the activity slot for a longer walk, or add a night. The AI Weekend Planner can sketch a version around your group — still verify roads and bookings yourself."
+      }
+    ],
+    "relatedDestinations": [
+      "rishikesh"
+    ],
+    "relatedItineraries": [
+      "delhi-to-mussoorie-2-day-itinerary",
+      "delhi-to-lansdowne-2-day-itinerary",
+      "delhi-to-kasauli-2-day-itinerary",
+      "delhi-to-jim-corbett-2-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Rishikesh 2-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Rishikesh 2-day weekend trip with a practical itinerary, budget bands, things to do and travel tips. Estimates only — verify roads and activities."
+  },
+  {
+    "id": "delhi-to-mussoorie-2-day",
+    "slug": "delhi-to-mussoorie-2-day-itinerary",
+    "title": "Delhi to Mussoorie 2-Day Itinerary",
+    "shortDescription": "A 2-day, 1-night hill-station weekend from Delhi NCR: one climb, one Mall-side evening, and a conservative Sunday return.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "mussoorie",
+    "destinationName": "Mussoorie",
+    "days": 2,
+    "nights": 1,
+    "duration": "2-days",
+    "tripType": "weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus",
+      "train"
+    ],
+    "travelStyle": "hills",
+    "budgetCategory": "mid",
+    "estimatedBudget": "Typically ₹7,000–₹14,000 per person for 2 days, depending on stay location and whether you hire local cabs.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Road fuel or train-plus-taxi. Hill last-mile can add a cab if you do not drive up."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "One night. Mall-adjacent rooms cost more on peak weekends."
+      },
+      {
+        "category": "Food",
+        "estimate": "Cafe and hotel meals. Budget a buffer if you eat only on the Mall."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Walks are free. Paid viewpoints or ropeways are optional extras."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls plus hill-town parking pressure on Saturdays."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Warm layer, snacks, and a small taxi buffer."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "families"
+    ],
+    "interests": [
+      "hills",
+      "walking",
+      "cafes",
+      "views"
+    ],
+    "bestTimeToVisit": "Often pleasant outside peak monsoon and the busiest holiday weekends. Winter needs warmer packing and daylight driving.",
+    "heroImage": null,
+    "overview": "Mussoorie in two days is a hill climb plus one evening, not a full Doon-and-beyond circuit. Leave NCR early. Do not add Dehradun sightseeing unless you already have slack. Sunday descents toward the plains routinely slow down.",
+    "highlights": [
+      "Early start so the climb is not entirely after dark",
+      "One Mall or ridge evening instead of a viewpoint checklist",
+      "A buffer for the return into NCR"
+    ],
+    "routeSummary": "Delhi NCR toward Dehradun then the Mussoorie climb by road, or train toward Dehradun plus taxi uphill. Treat it as a long hill-weekend drive category — not a guaranteed clock time.",
+    "travelTimeCategory": "About 6–8 hours each way by road in ordinary traffic, plus the hill climb (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Climb and a Mall-side evening",
+        "summary": "Travel, check in, and keep the evening to a walk rather than every viewpoint.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Mussoorie",
+          "location": "Plains toward Dehradun, then the hill road",
+          "description": "Leave before peak city traffic. If you train into Dehradun, add taxi time for the climb. App ETAs are not promises.",
+          "travelNote": "Fog, rain and landslide-prone stretches can add hours. Keep a stretch stop."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Check in and a short walk",
+          "location": "Stay neighbourhood",
+          "description": "Drop bags and walk nearby. Skip stacking Camel’s Back, Kempty and a cafe crawl on arrival.",
+          "foodSuggestion": "A simple lunch near the stay. Mall restaurants fill on Saturdays."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Mall or ridge walk",
+          "location": "Town / Mall area",
+          "description": "One evening circuit is enough. Crowds are normal on weekends — pick a quieter stretch if that bothers you.",
+          "foodSuggestion": "Early dinner. Hill nights get cold; carry a layer."
+        },
+        "placesToVisit": [
+          "Stay neighbourhood",
+          "Mall or nearby ridge"
+        ],
+        "activities": [
+          "Walking",
+          "Cafe time"
+        ],
+        "foodSuggestions": [
+          "Cafe plates",
+          "Hotel / guesthouse meals"
+        ],
+        "travelNotes": [
+          "Park once if you self-drive; circling wastes the evening.",
+          "If you ride, finish the climb in daylight when you can."
+        ],
+        "stayArea": "Mall-adjacent, Library end, or a quieter hillside pocket — pick one and stay put. No specific hotel is endorsed.",
+        "estimatedDailyBudget": "Day 1 often includes the heavier transport share."
+      },
+      {
+        "dayNumber": 2,
+        "title": "One view, then descent",
+        "summary": "A short morning pocket, then a conservative departure.",
+        "morning": {
+          "period": "morning",
+          "title": "One viewpoint or a longer walk",
+          "location": "Town / nearby ridge",
+          "description": "Pick one pocket. Do not try to cover Landour, Kempty and Gun Hill in the same morning.",
+          "travelNote": "Cloud and rain can hide views. Have a cafe backup."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Mussoorie → Delhi NCR",
+          "description": "Leave with a buffer. Sunday plains traffic toward NCR routinely slows. Trains need station-side time from Dehradun.",
+          "travelNote": "Do not add Haridwar unless you already have slack."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "A simple meal at home. The itinerary ends off the highway."
+        },
+        "placesToVisit": [
+          "One morning pocket only"
+        ],
+        "activities": [
+          "Short walk or viewpoint",
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast near stay",
+          "Highway snacks"
+        ],
+        "travelNotes": [
+          "Fuel before the last empty stretch if you self-drive."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Mostly transport and meals."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Common self-drive or hired-car pattern via Dehradun then the hill road.",
+        "note": "Tolls, fog and weekend traffic change the clock. This is not a live ETA."
+      },
+      {
+        "mode": "bike",
+        "summary": "A full riding day plus a climb. Not a city hop.",
+        "note": "Daylight on the hill road matters. Gear is not optional."
+      },
+      {
+        "mode": "bus",
+        "summary": "Services toward Dehradun / Mussoorie exist. Last-mile still takes time.",
+        "note": "Verify current services before you travel."
+      },
+      {
+        "mode": "train",
+        "summary": "Trains toward Dehradun plus taxi uphill.",
+        "note": "Check current enquiry for your date. This page does not list train numbers."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Mall or ridge walk",
+        "description": "The core hill-station evening.",
+        "category": "Walk"
+      },
+      {
+        "name": "Cafe morning",
+        "description": "Useful when views are in cloud.",
+        "category": "Food"
+      },
+      {
+        "name": "One viewpoint",
+        "description": "Pick one. Do not collect five.",
+        "category": "Views"
+      }
+    ],
+    "travelTips": [
+      "Leave NCR earlier than you think.",
+      "Carry a warm layer even in shoulder months.",
+      "Weekend Mall crowds are normal.",
+      "Monsoon weekends need a road check."
+    ],
+    "packingSuggestions": [
+      "Warm layer, rain shell in monsoon, walking shoes.",
+      "Power bank and a refillable bottle."
+    ],
+    "thingsToKnow": [
+      "Two days is a taste, not a Landour residency.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "Two days / one night is the common weekend shape. Three days is kinder."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Many people land in a mid band, often spoken of as roughly ₹7,000–₹14,000 per person. Stay location moves that number. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes if you leave early and do not stack Dehradun, Kempty and Landour into the same 36 hours."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car for groups. Train to Dehradun plus taxi reduces night climbing. Bike is for experienced riders."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Warm layer, walking shoes, rain cover in monsoon. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Swap the viewpoint for a longer walk, or add a night. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "mussoorie"
+    ],
+    "relatedItineraries": [
+      "delhi-to-kasauli-2-day-itinerary",
+      "delhi-to-lansdowne-2-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-nainital-3-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Mussoorie 2-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Mussoorie 2-day weekend trip with a practical itinerary, budget bands, hill-town walks and travel tips. Estimates only."
+  },
+  {
+    "id": "delhi-to-lansdowne-2-day",
+    "slug": "delhi-to-lansdowne-2-day-itinerary",
+    "title": "Delhi to Lansdowne 2-Day Itinerary",
+    "shortDescription": "A quieter 2-day, 1-night Garhwal hill weekend from Delhi NCR — walks, pine cover and an unhurried evening rather than a mall circuit.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "lansdowne",
+    "destinationName": "Lansdowne",
+    "days": 2,
+    "nights": 1,
+    "duration": "2-days",
+    "tripType": "weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus"
+    ],
+    "travelStyle": "relaxed",
+    "budgetCategory": "budget",
+    "estimatedBudget": "Typically ₹5,000–₹10,000 per person for 2 days, depending on stay standard and whether you self-drive.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Fuel is often the large line if you self-drive. Buses exist with last-mile time."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "One night. Smaller hill stays; peak weekends still fill."
+      },
+      {
+        "category": "Food",
+        "estimate": "Simple hotel and local meals. Fewer cafe options than Mussoorie."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Walks are the main spend-saver. Paid viewpoints are optional."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls if you self-drive."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Snacks, water, a small buffer."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "solo"
+    ],
+    "interests": [
+      "quiet hills",
+      "walking",
+      "pine forest"
+    ],
+    "bestTimeToVisit": "Often pleasant outside peak monsoon. Winters are colder than NCR — pack for it and keep daylight on the hill road.",
+    "heroImage": null,
+    "overview": "Lansdowne rewards people who want a quieter hill pocket, not a shopping street. Two days is enough for a walk and a night. Do not treat it as a substitute for Mussoorie’s cafe density.",
+    "highlights": [
+      "Quieter hill evening than the big mall towns",
+      "Walk-first plan",
+      "Sensible Sunday return buffer"
+    ],
+    "routeSummary": "Delhi NCR toward Kotdwar then the hill road to Lansdowne. Treat it as a long half-day-plus drive category in ordinary traffic — not a guaranteed clock time.",
+    "travelTimeCategory": "About 5–7 hours each way by road in ordinary traffic, plus the hill stretch (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Arrive and walk",
+        "summary": "Travel, check in, and a pine-side evening walk.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Lansdowne",
+          "location": "Plains toward Kotdwar, then the hill road",
+          "description": "Leave early. This is not a two-hour hop. App ETAs are not promises.",
+          "travelNote": "Fog and rain add time. Stretch stops help."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Check in",
+          "location": "Town / stay area",
+          "description": "Drop bags. Walk the nearest quiet road instead of a viewpoint checklist.",
+          "foodSuggestion": "Lunch at or near the stay. Options are thinner than in larger hill stations."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Pine and cantonment-side walk",
+          "location": "Town walks (local rules apply)",
+          "description": "Keep it local. Photography and access rules exist in places — follow them.",
+          "foodSuggestion": "Early dinner. Nights are quiet."
+        },
+        "placesToVisit": [
+          "Stay neighbourhood",
+          "Nearby forest / ridge walk"
+        ],
+        "activities": [
+          "Walking"
+        ],
+        "foodSuggestions": [
+          "Stay meals",
+          "Simple local plates"
+        ],
+        "travelNotes": [
+          "If you ride, finish the climb in daylight when you can."
+        ],
+        "stayArea": "In-town or a nearby hillside stay. No specific hotel is endorsed.",
+        "estimatedDailyBudget": "Transport-heavy day."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Morning walk and return",
+        "summary": "One ridge or forest pocket, then descent.",
+        "morning": {
+          "period": "morning",
+          "title": "Short walk or viewpoint",
+          "location": "Nearby ridge / forest edge",
+          "description": "Pick one. Cloud can hide views — a tea stop is a valid backup."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Lansdowne → Delhi NCR",
+          "description": "Leave with a buffer. Sunday plains traffic toward NCR can slow."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "Simple meal at home."
+        },
+        "placesToVisit": [
+          "One morning pocket"
+        ],
+        "activities": [
+          "Walk",
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast at stay",
+          "Packed snacks"
+        ],
+        "travelNotes": [
+          "Fuel before long empty stretches if you self-drive."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Mostly transport and meals."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Usual self-drive or hired-car pattern via the Kotdwar belt.",
+        "note": "Not a live ETA. Fog and weekend traffic change the clock."
+      },
+      {
+        "mode": "bike",
+        "summary": "A full riding day plus a climb.",
+        "note": "Daylight on the hill road matters."
+      },
+      {
+        "mode": "bus",
+        "summary": "Services toward Kotdwar plus last-mile uphill.",
+        "note": "Verify current services before you travel."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Pine-side walk",
+        "description": "The reason to pick Lansdowne over a louder mall town.",
+        "category": "Walk"
+      },
+      {
+        "name": "Quiet evening",
+        "description": "Early dinner, fewer neon strips.",
+        "category": "Relaxed"
+      }
+    ],
+    "travelTips": [
+      "Leave NCR early.",
+      "Expect fewer late-night food options.",
+      "Carry a warm layer.",
+      "Check monsoon road updates."
+    ],
+    "packingSuggestions": [
+      "Warm layer, walking shoes, rain shell in monsoon.",
+      "Power bank and water bottle."
+    ],
+    "thingsToKnow": [
+      "This is a quiet weekend, not an adventure park.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "Two days / one night is enough for a first look. Add a night if you want slower mornings."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Often a budget-to-mid band, commonly spoken of as roughly ₹5,000–₹10,000 per person. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes if you leave early and keep the plan walk-first."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car is the default. Bike for experienced riders. Bus plus last-mile if you do not drive."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Warm layer, walking shoes, rain cover. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Stretch walks or add a night. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "lansdowne"
+    ],
+    "relatedItineraries": [
+      "delhi-to-mussoorie-2-day-itinerary",
+      "delhi-to-kasauli-2-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-jim-corbett-2-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Lansdowne 2-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Lansdowne 2-day weekend with a quiet hill itinerary, budget bands and travel tips. Estimates only."
+  },
+  {
+    "id": "delhi-to-jaipur-2-day",
+    "slug": "delhi-to-jaipur-2-day-itinerary",
+    "title": "Delhi to Jaipur 2-Day Itinerary",
+    "shortDescription": "A 2-day, 1-night heritage weekend from Delhi NCR: one old-city block, one evening, and a disciplined return — not a three-fort marathon.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "jaipur",
+    "destinationName": "Jaipur",
+    "days": 2,
+    "nights": 1,
+    "duration": "2-days",
+    "tripType": "weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus",
+      "train"
+    ],
+    "travelStyle": "heritage",
+    "budgetCategory": "mid",
+    "estimatedBudget": "Typically ₹6,000–₹13,000 per person for 2 days, depending on stay area and how many paid monuments you enter.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Expressway fuel or train tickets. City cabs add up if you hop forts."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "One night. Old-city-adjacent rooms cost more on peak weekends."
+      },
+      {
+        "category": "Food",
+        "estimate": "Thalis and cafes. Tourist-strip meals cost more."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Monument tickets are extra. Do not assume combo prices from an old blog."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Expressway tolls if you self-drive. City parking can be tight."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Water, souvenirs buffer, a small taxi float."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "families"
+    ],
+    "interests": [
+      "heritage",
+      "food",
+      "old city"
+    ],
+    "bestTimeToVisit": "Often more comfortable in cooler months. Summer days are harsh for fort-hopping. Festival weekends are crowded.",
+    "heroImage": null,
+    "overview": "Jaipur in two days is one heritage cluster plus an evening, not Amber, City Palace, Nahargarh and a shopping list. Leave NCR early. Heat and queues will eat a sloppy plan.",
+    "highlights": [
+      "One fort or palace cluster, not five",
+      "An old-city or bazaar evening if you have energy",
+      "Train option to skip night driving"
+    ],
+    "routeSummary": "Delhi NCR toward Jaipur by expressway, or train on the Delhi–Jaipur corridor plus station-side time. Treat road time as a roughly 4–6 hour category in ordinary traffic — not a guaranteed clock time.",
+    "travelTimeCategory": "About 4–6 hours each way by road in ordinary traffic (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Travel and one heritage block",
+        "summary": "Arrive, check in, and pick one cluster — usually Amber-side or old-city, not both at full tilt.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Jaipur",
+          "location": "Expressway / rail corridor",
+          "description": "Leave early by road, or take a morning train. Do not treat app ETAs as promises.",
+          "travelNote": "Weekend expressway traffic still clumps. Trains need station buffers."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "One fort or palace cluster",
+          "location": "Amber belt or old city — pick one",
+          "description": "Enter one major site if tickets and queues allow. Skip stacking a second fort the same afternoon.",
+          "foodSuggestion": "A simple lunch near the cluster. Carry water in heat.",
+          "travelNote": "Ticket rules and prices change. Check official sources on the day."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Old-city walk or a quiet stay evening",
+          "location": "Bazaar lanes or stay neighbourhood",
+          "description": "A short bazaar walk if you still have legs. Otherwise rest. This is not a night-market obligation.",
+          "foodSuggestion": "Thali or a known cafe. Street food only if you already tolerate it."
+        },
+        "placesToVisit": [
+          "One monument cluster",
+          "Stay neighbourhood"
+        ],
+        "activities": [
+          "Heritage visit",
+          "Optional bazaar walk"
+        ],
+        "foodSuggestions": [
+          "Thalis",
+          "Cafes"
+        ],
+        "travelNotes": [
+          "Park once. City circling wastes heat and fuel."
+        ],
+        "stayArea": "Old-city fringe, MI Road belt, or a quieter outskirts stay with a plan for cabs. No hotel is endorsed.",
+        "estimatedDailyBudget": "Transport plus optional monument tickets."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Light morning and return",
+        "summary": "One museum, garden or cafe — then leave before the worst return traffic.",
+        "morning": {
+          "period": "morning",
+          "title": "City Palace area, a garden, or a cafe",
+          "location": "Central Jaipur — one pocket",
+          "description": "Pick one. Do not reopen the entire Amber plan."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Jaipur → Delhi NCR",
+          "description": "Leave with a buffer. Sunday expressway traffic toward NCR can bunch. Trains need station time."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "Simple meal at home."
+        },
+        "placesToVisit": [
+          "One morning pocket"
+        ],
+        "activities": [
+          "Light heritage or cafe",
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast",
+          "Packed water"
+        ],
+        "travelNotes": [
+          "Confirm train times on the day you travel."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Mostly transport and meals."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Common self-drive or hired-car pattern on the Delhi–Jaipur expressway.",
+        "note": "Tolls and weekend traffic change the clock. Not a live ETA."
+      },
+      {
+        "mode": "bike",
+        "summary": "A long highway day. Heat and trucks are the real constraints.",
+        "note": "Daylight riding and hydration matter."
+      },
+      {
+        "mode": "bus",
+        "summary": "Volvo and state services run this corridor.",
+        "note": "Verify current services before you travel."
+      },
+      {
+        "mode": "train",
+        "summary": "Frequent corridor. Station-side time still counts.",
+        "note": "Check current enquiry for your date. This page does not list train numbers."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "One fort or palace",
+        "description": "The weekend’s paid highlight — keep it to one cluster.",
+        "category": "Heritage"
+      },
+      {
+        "name": "Bazaar evening",
+        "description": "Optional and crowded. Leave if it is only noise.",
+        "category": "City"
+      },
+      {
+        "name": "Thali",
+        "description": "Easier than a restaurant crawl.",
+        "category": "Food"
+      }
+    ],
+    "travelTips": [
+      "Summer sightseeing needs an early monument slot.",
+      "Carry water and modest clothing for temples if you include them.",
+      "Weekend queues are normal — pick fewer tickets.",
+      "Do not invent exact ticket prices from memory; check official counters."
+    ],
+    "packingSuggestions": [
+      "Sun protection, comfortable walking shoes, a light layer for evening.",
+      "Power bank and water bottle."
+    ],
+    "thingsToKnow": [
+      "Two days will not cover every fort on a postcard.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "Two days / one night is a first taste. Three days is better if you want two monument clusters."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Often a mid band, commonly spoken of as roughly ₹6,000–₹13,000 per person plus monument tickets. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes if you pick one heritage cluster per day-part and leave NCR early."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Train is often the least tiring. Car is flexible for groups. Bus works. Bike is a long hot highway."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Walking shoes, sun protection, a layer. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Swap forts for food, or add a night. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "jaipur"
+    ],
+    "relatedItineraries": [
+      "delhi-to-neemrana-1-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-mussoorie-2-day-itinerary",
+      "delhi-to-kasauli-2-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Jaipur 2-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Jaipur 2-day weekend with a practical heritage itinerary, budget bands and travel tips. Estimates only."
+  },
+  {
+    "id": "delhi-to-nainital-3-day",
+    "slug": "delhi-to-nainital-3-day-itinerary",
+    "title": "Delhi to Nainital 3-Day Itinerary",
+    "shortDescription": "A 3-day, 2-night Kumaon weekend from Delhi NCR: travel, a lake-town day, and a buffer morning before the long return.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "nainital",
+    "destinationName": "Nainital",
+    "days": 3,
+    "nights": 2,
+    "duration": "3-days",
+    "tripType": "long-weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus"
+    ],
+    "travelStyle": "hills",
+    "budgetCategory": "mid",
+    "estimatedBudget": "Typically ₹9,000–₹18,000 per person for 3 days, depending on stay and whether you add lake-district day trips.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Fuel for a longer hill weekend, or bus plus local cabs."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "Two nights. Lake-view rooms cost more on peak weekends."
+      },
+      {
+        "category": "Food",
+        "estimate": "Mall-road meals add up. Mix stay dining if you can."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Boat rides and viewpoints are optional extras. Prices change — check locally."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls plus tight hill-town parking."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Warm layer, snacks, taxi buffer for nearby lakes."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "families"
+    ],
+    "interests": [
+      "lake",
+      "hills",
+      "walking",
+      "views"
+    ],
+    "bestTimeToVisit": "Often pleasant outside peak monsoon. Peak holiday weekends are crowded around the lake. Winters need warmer packing.",
+    "heroImage": null,
+    "overview": "Nainital is farther than a Jaipur hop. Three days / two nights is the honest weekend-plus shape. Two days is usually a highway sandwich. Keep day two for the lake and one nearby pocket — not every Kumaon lake on a listicle.",
+    "highlights": [
+      "Two nights so the return is not the same evening you arrive",
+      "One lake-town day instead of a five-lake circuit",
+      "A buffer morning before NCR traffic"
+    ],
+    "routeSummary": "Delhi NCR toward Haldwani / Kathgodam then the climb to Nainital. Treat it as a long hill-weekend drive category — often spoken of as 7–9 hours in ordinary traffic, not a guaranteed clock time.",
+    "travelTimeCategory": "About 7–9 hours each way by road in ordinary traffic, plus the hill climb (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Long travel day",
+        "summary": "Leave very early. Evening is for check-in and a short lake-edge walk, not a Mall crawl.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Nainital",
+          "location": "Plains toward Haldwani / Kathgodam, then the hill road",
+          "description": "This is a long day. Leave before dawn if you can. App ETAs are not promises.",
+          "travelNote": "Fog, rain and weekend jams add hours. Stretch stops help."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Climb and check in",
+          "location": "Hill road / stay area",
+          "description": "Drop bags. Do not add Bhimtal on arrival.",
+          "foodSuggestion": "A simple late lunch near the stay."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Short lake-edge walk",
+          "location": "Naini Lake belt",
+          "description": "One circuit is enough. Mall crowds are normal on weekends.",
+          "foodSuggestion": "Early dinner. Carry a warm layer."
+        },
+        "placesToVisit": [
+          "Stay neighbourhood",
+          "Lake edge"
+        ],
+        "activities": [
+          "Walking"
+        ],
+        "foodSuggestions": [
+          "Stay / Mall meals"
+        ],
+        "travelNotes": [
+          "If you ride, this is a full endurance day — daylight on the climb matters."
+        ],
+        "stayArea": "Mall-adjacent, Tallital / Mallital, or a quieter hillside pocket. No hotel is endorsed.",
+        "estimatedDailyBudget": "Transport-heavy day."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Lake town day",
+        "summary": "Walk, optional boat, one viewpoint — not a five-stop taxi tour unless you already know the roads.",
+        "morning": {
+          "period": "morning",
+          "title": "Lake and Mall",
+          "location": "Naini Lake / Mall Road",
+          "description": "Walk first. Boat rides are optional and weather-dependent."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "One viewpoint or nearby pocket",
+          "location": "Town ridge or one nearby lake — pick one",
+          "description": "Do not stack Nainital, Bhimtal, Naukuchiatal and Sattal unless you have a driver and slack.",
+          "foodSuggestion": "Lunch in town. Carry water."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Quiet evening",
+          "location": "Stay neighbourhood",
+          "description": "Rest. Tomorrow is a return day.",
+          "foodSuggestion": "Dinner near stay."
+        },
+        "placesToVisit": [
+          "Lake",
+          "One viewpoint or nearby pocket"
+        ],
+        "activities": [
+          "Walking",
+          "Optional boat"
+        ],
+        "foodSuggestions": [
+          "Cafes",
+          "Hotel meals"
+        ],
+        "travelNotes": [
+          "Parking is painful — walk when you can."
+        ],
+        "stayArea": "Same stay — do not hotel-hop.",
+        "estimatedDailyBudget": "Food plus optional activities."
+      },
+      {
+        "dayNumber": 3,
+        "title": "Buffer morning and return",
+        "summary": "A short walk or cafe, then a conservative descent toward NCR.",
+        "morning": {
+          "period": "morning",
+          "title": "Cafe or short walk",
+          "location": "Town",
+          "description": "Do not open a new lake district."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Nainital → Delhi NCR",
+          "description": "Leave with a large buffer. Sunday plains traffic toward NCR can be slow."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "Late arrival is common. Keep dinner simple."
+        },
+        "placesToVisit": [
+          "None required"
+        ],
+        "activities": [
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast",
+          "Packed snacks"
+        ],
+        "travelNotes": [
+          "Fuel before long stretches if you self-drive."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Mostly transport."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Usual self-drive or hired-car pattern via Haldwani / Kathgodam.",
+        "note": "Long day. Not a live ETA."
+      },
+      {
+        "mode": "bike",
+        "summary": "A demanding two-way riding weekend. Three days is kinder than two.",
+        "note": "Daylight and fatigue management matter."
+      },
+      {
+        "mode": "bus",
+        "summary": "Overnight and day services exist toward the Kathgodam belt plus last-mile.",
+        "note": "Verify current services before you travel."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Lake walk",
+        "description": "The core of the town.",
+        "category": "Walk"
+      },
+      {
+        "name": "Optional boat",
+        "description": "Weather and queue dependent. Confirm locally.",
+        "category": "Lake"
+      },
+      {
+        "name": "One viewpoint",
+        "description": "Pick one ridge, not five.",
+        "category": "Views"
+      }
+    ],
+    "travelTips": [
+      "Treat this as a 3-day trip, not a 2-day squeeze.",
+      "Carry a warm layer.",
+      "Weekend Mall crowds are normal.",
+      "Monsoon needs a road check."
+    ],
+    "packingSuggestions": [
+      "Warm layers, rain shell, walking shoes.",
+      "Power bank and water bottle."
+    ],
+    "thingsToKnow": [
+      "Two days usually feels like travel, not holiday.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "Three days / two nights is the practical shape from Delhi NCR. Two days is mostly highway."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Often a mid band, commonly spoken of as roughly ₹9,000–₹18,000 per person for three days. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "It fits a long weekend better than a Sat–Sun squeeze. Leave Friday night only if you already know the road."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car for families. Bus if you do not want to drive. Bike only if you are used to long hill days."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Warm layers, walking shoes, rain cover. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Drop the extra lake, or add a night. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "nainital"
+    ],
+    "relatedItineraries": [
+      "delhi-to-jim-corbett-2-day-itinerary",
+      "delhi-to-mussoorie-2-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-kasauli-2-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Nainital 3-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Nainital 3-day trip with a practical lake-town itinerary, budget bands and travel tips. Estimates only."
+  },
+  {
+    "id": "delhi-to-jim-corbett-2-day",
+    "slug": "delhi-to-jim-corbett-2-day-itinerary",
+    "title": "Delhi to Jim Corbett 2-Day Itinerary",
+    "shortDescription": "A 2-day, 1-night forest-belt weekend from Delhi NCR: travel, a stay-area evening, and a morning safari slot only if you already have a permit.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "jim-corbett",
+    "destinationName": "Jim Corbett",
+    "days": 2,
+    "nights": 1,
+    "duration": "2-days",
+    "tripType": "weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus"
+    ],
+    "travelStyle": "wildlife",
+    "budgetCategory": "mid",
+    "estimatedBudget": "Typically ₹8,000–₹16,000 per person for 2 days, depending on stay and whether a safari is booked. Safari fees are separate and change.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Fuel for a long plains-to-foothills drive, or bus plus last-mile."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "One night in a resort / lodge belt outside core zones. Peak weekends fill."
+      },
+      {
+        "category": "Food",
+        "estimate": "Often stay-inclusive. Budget extra if you eat only at the property restaurant."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Safaris are permit-based and paid. This page does not sell or confirm slots."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls if you self-drive."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Buffer for permit changes and a small taxi."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "families"
+    ],
+    "interests": [
+      "wildlife",
+      "forest",
+      "quiet stay"
+    ],
+    "bestTimeToVisit": "Safari zones follow seasonal closures and permit rules. Check official park information before you travel. Monsoon and closures can cancel the whole point of the trip.",
+    "heroImage": null,
+    "overview": "Corbett is not a guaranteed tiger weekend. This plan assumes a stay in the Ramnagar / resort belt and a safari only if you already hold a valid permit. Do not arrive expecting a walk-in gypsy. Two days is tight; three is kinder.",
+    "highlights": [
+      "Stay-area evening instead of a fake ‘guaranteed sighting’",
+      "Safari only with a real permit",
+      "Conservative return to NCR"
+    ],
+    "routeSummary": "Delhi NCR toward Moradabad / Ramnagar. Treat it as a long foothills drive category — often spoken of as 5–7 hours in ordinary traffic, not a guaranteed clock time.",
+    "travelTimeCategory": "About 5–7 hours each way by road in ordinary traffic (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Travel and forest-belt evening",
+        "summary": "Arrive, check in, and keep the evening quiet. Do not hunt for unofficial night drives.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Corbett belt",
+          "location": "Plains toward Ramnagar",
+          "description": "Leave early. This is a long day. App ETAs are not promises.",
+          "travelNote": "Fog and weekend traffic add hours."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Check in",
+          "location": "Resort / lodge belt (outside core rules)",
+          "description": "Drop bags. Rest. Confirm tomorrow’s permit if you have one — with the operator, not a rumour.",
+          "foodSuggestion": "Lunch at the stay if that is how the property works."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Stay-area evening",
+          "location": "Property / nearby market town only if needed",
+          "description": "A walk on the property if allowed. Unofficial night safari claims are a red flag.",
+          "foodSuggestion": "Dinner at stay. Early night if you have a dawn slot."
+        },
+        "placesToVisit": [
+          "Stay belt"
+        ],
+        "activities": [
+          "Rest",
+          "Permit confirmation if applicable"
+        ],
+        "foodSuggestions": [
+          "Stay meals"
+        ],
+        "travelNotes": [
+          "Do not enter restricted forest roads."
+        ],
+        "stayArea": "Ramnagar-side or a notified resort belt. Core forest stays follow park rules. No hotel is endorsed.",
+        "estimatedDailyBudget": "Transport plus stay."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Morning slot or walk, then return",
+        "summary": "Safari if permitted; otherwise a riverside walk outside restricted zones, then leave.",
+        "morning": {
+          "period": "morning",
+          "title": "Safari slot or a legal walk",
+          "location": "Booked zone or stay-adjacent public area",
+          "description": "Only enter with a valid permit and authorised vehicle. If cancelled, walk where it is allowed and leave on time.",
+          "travelNote": "Sightings are never guaranteed. Anyone who promises one is selling a story."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Corbett belt → Delhi NCR",
+          "description": "Leave with a buffer. Sunday traffic toward NCR can slow."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "Simple meal at home."
+        },
+        "placesToVisit": [
+          "Permitted zone or stay area only"
+        ],
+        "activities": [
+          "Optional safari",
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast at stay",
+          "Packed snacks"
+        ],
+        "travelNotes": [
+          "Carry ID if your permit requires it."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Safari fees extra if used."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Usual self-drive or hired-car pattern toward Ramnagar.",
+        "note": "Not a live ETA."
+      },
+      {
+        "mode": "bike",
+        "summary": "A long highway day. Forest-belt riding still needs daylight and legal roads only.",
+        "note": "Gear and fatigue matter."
+      },
+      {
+        "mode": "bus",
+        "summary": "Services toward Ramnagar plus last-mile to stays.",
+        "note": "Verify current services before you travel."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Stay in the forest belt",
+        "description": "The weekend still works as a quiet night even if a safari is cancelled.",
+        "category": "Stay"
+      },
+      {
+        "name": "Safari (permit only)",
+        "description": "Book through official / authorised channels. Fees and zones change.",
+        "category": "Wildlife"
+      }
+    ],
+    "travelTips": [
+      "Book permits before you leave NCR if a safari is the point of the trip.",
+      "Carry ID.",
+      "Do not trespass core areas.",
+      "Monsoon and closures can wipe the plan — have a backup weekend."
+    ],
+    "packingSuggestions": [
+      "Neutral colours, a warm layer for dawn, closed shoes.",
+      "Binoculars if you already own them — not required.",
+      "Power bank and water bottle."
+    ],
+    "thingsToKnow": [
+      "This page does not confirm safari availability.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "Two days / one night is the common squeeze. Three days is better if you want two safari slots."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Often a mid-to-higher band, commonly spoken of as roughly ₹8,000–₹16,000 per person plus safari fees. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes if permits are already in hand or you are fine with a stay-only weekend."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car is the default. Bus plus last-mile works. Bike is a long day."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Warm dawn layer, closed shoes, ID. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Drop the safari or add a night. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "jim-corbett"
+    ],
+    "relatedItineraries": [
+      "delhi-to-nainital-3-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-lansdowne-2-day-itinerary",
+      "delhi-to-mussoorie-2-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Jim Corbett 2-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Jim Corbett 2-day weekend with a practical stay-and-safari sketch, budget bands and travel tips. Permits are not guaranteed."
+  },
+  {
+    "id": "delhi-to-kasauli-2-day",
+    "slug": "delhi-to-kasauli-2-day-itinerary",
+    "title": "Delhi to Kasauli 2-Day Itinerary",
+    "shortDescription": "A 2-day, 1-night quiet Himachal cantonment weekend from Delhi NCR: one climb, pine walks, and an early Sunday descent.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "kasauli",
+    "destinationName": "Kasauli",
+    "days": 2,
+    "nights": 1,
+    "duration": "2-days",
+    "tripType": "weekend",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus"
+    ],
+    "travelStyle": "relaxed",
+    "budgetCategory": "mid",
+    "estimatedBudget": "Typically ₹6,000–₹12,000 per person for 2 days, depending on stay and whether you hire a cab on the hill.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Fuel via Chandigarh / Kalka belt, or bus plus last-mile."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "One night. Peak weekends fill even in a small town."
+      },
+      {
+        "category": "Food",
+        "estimate": "Fewer cafe options than Mussoorie. Stay meals are common."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Walks are the plan. Paid viewpoints are optional."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls if you self-drive."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Warm layer, snacks, small buffer."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "solo"
+    ],
+    "interests": [
+      "quiet hills",
+      "walking",
+      "cantonment town"
+    ],
+    "bestTimeToVisit": "Often pleasant outside peak monsoon. Winters are colder — pack for it. Respect cantonment access rules.",
+    "heroImage": null,
+    "overview": "Kasauli is a small, walkable hill pocket. Two days is enough. Do not treat it as a Shimla substitute. Follow local access rules on restricted roads.",
+    "highlights": [
+      "Walk-first evening",
+      "Quieter than Mall-heavy hill stations",
+      "Sensible return buffer"
+    ],
+    "routeSummary": "Delhi NCR toward Chandigarh / Kalka then the Kasauli climb. Treat it as a long half-day-plus drive category — often 5–7 hours in ordinary traffic, not a guaranteed clock time.",
+    "travelTimeCategory": "About 5–7 hours each way by road in ordinary traffic, plus the hill stretch (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Climb and a quiet evening",
+        "summary": "Travel, check in, and a pine walk — not a shopping circuit.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Kasauli",
+          "location": "Plains toward Chandigarh / Kalka, then the hill road",
+          "description": "Leave early. App ETAs are not promises.",
+          "travelNote": "Fog and rain add time."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Check in",
+          "location": "Town / stay area",
+          "description": "Drop bags. Walk nearby. Skip a viewpoint checklist on arrival.",
+          "foodSuggestion": "Lunch at or near the stay."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Town and ridge walk",
+          "location": "Public walking routes (local rules apply)",
+          "description": "Keep to allowed roads. Photography rules exist in places.",
+          "foodSuggestion": "Early dinner. Nights are quiet."
+        },
+        "placesToVisit": [
+          "Stay neighbourhood",
+          "Public walks"
+        ],
+        "activities": [
+          "Walking"
+        ],
+        "foodSuggestions": [
+          "Stay meals",
+          "Simple town plates"
+        ],
+        "travelNotes": [
+          "If you ride, finish the climb in daylight when you can."
+        ],
+        "stayArea": "In-town or a nearby hillside stay. No hotel is endorsed.",
+        "estimatedDailyBudget": "Transport-heavy day."
+      },
+      {
+        "dayNumber": 2,
+        "title": "Morning walk and return",
+        "summary": "One ridge pocket, then descent.",
+        "morning": {
+          "period": "morning",
+          "title": "Short walk",
+          "location": "Nearby public ridge",
+          "description": "Cloud can hide views. Tea is a valid backup."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Return journey",
+          "location": "Kasauli → Delhi NCR",
+          "description": "Leave with a buffer. Sunday plains traffic can slow."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Arrive NCR",
+          "location": "Delhi NCR",
+          "description": "Simple meal at home."
+        },
+        "placesToVisit": [
+          "One morning pocket"
+        ],
+        "activities": [
+          "Walk",
+          "Return travel"
+        ],
+        "foodSuggestions": [
+          "Breakfast",
+          "Packed snacks"
+        ],
+        "travelNotes": [
+          "Fuel before long stretches if you self-drive."
+        ],
+        "stayArea": "N/A — return day.",
+        "estimatedDailyBudget": "Mostly transport and meals."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Usual self-drive or hired-car pattern via the Chandigarh / Kalka belt.",
+        "note": "Not a live ETA."
+      },
+      {
+        "mode": "bike",
+        "summary": "A full riding day plus a climb.",
+        "note": "Daylight on the hill road matters."
+      },
+      {
+        "mode": "bus",
+        "summary": "Services toward Chandigarh / Kalka plus last-mile uphill.",
+        "note": "Verify current services before you travel."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Pine walk",
+        "description": "The reason to pick Kasauli.",
+        "category": "Walk"
+      },
+      {
+        "name": "Quiet evening",
+        "description": "Early dinner, few neon strips.",
+        "category": "Relaxed"
+      }
+    ],
+    "travelTips": [
+      "Leave NCR early.",
+      "Respect cantonment restrictions.",
+      "Carry a warm layer.",
+      "Check monsoon road updates."
+    ],
+    "packingSuggestions": [
+      "Warm layer, walking shoes, rain shell in monsoon.",
+      "Power bank and water bottle."
+    ],
+    "thingsToKnow": [
+      "This is a quiet weekend, not Shimla.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "Two days / one night is enough for a first look."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Often a mid band, commonly spoken of as roughly ₹6,000–₹12,000 per person. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes if you leave early and keep it walk-first."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car is the default. Bike for experienced riders. Bus plus last-mile if you do not drive."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Warm layer, walking shoes, rain cover. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Add a night or swap walks. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "kasauli"
+    ],
+    "relatedItineraries": [
+      "delhi-to-mussoorie-2-day-itinerary",
+      "delhi-to-lansdowne-2-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-nainital-3-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Kasauli 2-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Kasauli 2-day weekend with a quiet hill itinerary, budget bands and travel tips. Estimates only."
+  },
+  {
+    "id": "delhi-to-neemrana-1-day",
+    "slug": "delhi-to-neemrana-1-day-itinerary",
+    "title": "Delhi to Neemrana 1-Day Itinerary",
+    "shortDescription": "A same-day heritage hop from Delhi NCR: morning drive, a fort-town block, and a return before the worst night traffic.",
+    "origin": "delhi-ncr",
+    "originLabel": "Delhi NCR",
+    "destinationSlug": "neemrana",
+    "destinationName": "Neemrana",
+    "days": 1,
+    "nights": 0,
+    "duration": "1-day",
+    "tripType": "day-trip",
+    "travelModes": [
+      "car",
+      "bike",
+      "bus"
+    ],
+    "travelStyle": "heritage",
+    "budgetCategory": "budget",
+    "estimatedBudget": "Typically ₹2,000–₹6,000 per person for a day trip, depending on fuel share, meals and whether you enter paid attractions.",
+    "budgetLines": [
+      {
+        "category": "Transport",
+        "estimate": "Fuel or bus. The large line if you go alone by cab."
+      },
+      {
+        "category": "Accommodation",
+        "estimate": "None unless you choose to stay — this plan is a day trip."
+      },
+      {
+        "category": "Food",
+        "estimate": "Lunch and tea. Highway restaurants vary."
+      },
+      {
+        "category": "Activities",
+        "estimate": "Fort / attraction tickets if you enter. Confirm current access locally."
+      },
+      {
+        "category": "Tolls / parking",
+        "estimate": "Highway tolls if you self-drive."
+      },
+      {
+        "category": "Miscellaneous",
+        "estimate": "Water and a small buffer."
+      }
+    ],
+    "bestFor": [
+      "couples",
+      "friends",
+      "families"
+    ],
+    "interests": [
+      "heritage",
+      "day trip",
+      "highway hop"
+    ],
+    "bestTimeToVisit": "Cooler months are kinder for walking. Summer heat makes a midday fort visit harsh. Start early.",
+    "heroImage": null,
+    "overview": "Neemrana is one of the shorter heritage hops from NCR. It is still a full day if you want time on site — not a two-hour errand. This plan does not assume a hotel stay or a private palace booking.",
+    "highlights": [
+      "Same-day return",
+      "One heritage block",
+      "Early start and an early-ish return"
+    ],
+    "routeSummary": "Delhi NCR toward the Jaipur highway belt / Neemrana. Treat road time as a roughly 2–3.5 hour category each way in ordinary traffic — not a guaranteed clock time.",
+    "travelTimeCategory": "About 2–3.5 hours each way by road in ordinary traffic (approximate).",
+    "dayPlans": [
+      {
+        "dayNumber": 1,
+        "title": "Day trip there and back",
+        "summary": "Morning drive, a heritage block, lunch, then a conservative return.",
+        "morning": {
+          "period": "morning",
+          "title": "Delhi NCR → Neemrana",
+          "location": "Highway toward the Jaipur belt",
+          "description": "Leave early. Weekend highway traffic still clumps. App ETAs are not promises.",
+          "travelNote": "Fog in winter can add time."
+        },
+        "afternoon": {
+          "period": "afternoon",
+          "title": "Fort-town / heritage block",
+          "location": "Neemrana heritage area",
+          "description": "Walk and, if open to visitors, enter paid areas after checking current rules. This is not a hotel reservation.",
+          "foodSuggestion": "Lunch in town or a known highway stop. Carry water in heat.",
+          "travelNote": "Access and ticket rules change. Confirm on the day."
+        },
+        "evening": {
+          "period": "evening",
+          "title": "Return to NCR",
+          "location": "Neemrana → Delhi NCR",
+          "description": "Leave before the worst evening bunching if you can. Do not add a second town.",
+          "foodSuggestion": "Tea on the highway if needed. Dinner at home is the plan."
+        },
+        "placesToVisit": [
+          "Heritage / fort precinct"
+        ],
+        "activities": [
+          "Walking",
+          "Optional paid entry"
+        ],
+        "foodSuggestions": [
+          "Town or highway lunch"
+        ],
+        "travelNotes": [
+          "Park once. Do not circle."
+        ],
+        "stayArea": "Day trip — no stay unless you independently book one.",
+        "estimatedDailyBudget": "Transport, food, optional tickets."
+      }
+    ],
+    "howToReach": [
+      {
+        "mode": "car",
+        "summary": "Usual self-drive or hired-car pattern on the Delhi–Jaipur highway belt.",
+        "note": "Not a live ETA. Tolls apply."
+      },
+      {
+        "mode": "bike",
+        "summary": "A manageable highway day in cooler months. Heat is the constraint in summer.",
+        "note": "Hydration and daylight matter."
+      },
+      {
+        "mode": "bus",
+        "summary": "Highway buses toward this belt exist. Last-mile to the fort area still takes time.",
+        "note": "Verify current services before you travel."
+      }
+    ],
+    "experiences": [
+      {
+        "name": "Heritage precinct walk",
+        "description": "The point of the hop.",
+        "category": "Heritage"
+      },
+      {
+        "name": "Highway tea",
+        "description": "Part of the NCR day-trip rhythm.",
+        "category": "Food"
+      }
+    ],
+    "travelTips": [
+      "Start earlier than a city brunch.",
+      "Summer midday is harsh for walking.",
+      "Do not assume palace-hotel access without a booking you already have.",
+      "Confirm attraction hours on the day."
+    ],
+    "packingSuggestions": [
+      "Sun protection, walking shoes, water.",
+      "A light layer for AC cars / evening return."
+    ],
+    "thingsToKnow": [
+      "This is a day trip, not an overnight itinerary.",
+      "Estimates are categories, not invoices."
+    ],
+    "faq": [
+      {
+        "question": "How many days do I need?",
+        "answer": "One full day is the usual shape. Overnight is optional if you already have a stay."
+      },
+      {
+        "question": "What is the approximate budget?",
+        "answer": "Often a budget band, commonly spoken of as roughly ₹2,000–₹6,000 per person if you share a car. Solo cabs cost more. Not a live quote."
+      },
+      {
+        "question": "Is this suitable for a weekend?",
+        "answer": "Yes as a Saturday or Sunday day trip if you leave early and skip extra towns."
+      },
+      {
+        "question": "Which transport is best?",
+        "answer": "Car is the default. Bike in cooler months. Bus plus last-mile if you do not drive."
+      },
+      {
+        "question": "What should I pack?",
+        "answer": "Walking shoes, sun protection, water. Use the Weekend Packing List tool."
+      },
+      {
+        "question": "Can this itinerary be customised?",
+        "answer": "Yes. Turn it into an overnight or combine with a Jaipur weekend. The AI Weekend Planner can sketch a version around your group."
+      }
+    ],
+    "relatedDestinations": [
+      "neemrana"
+    ],
+    "relatedItineraries": [
+      "delhi-to-jaipur-2-day-itinerary",
+      "delhi-to-rishikesh-2-day-itinerary",
+      "delhi-to-lansdowne-2-day-itinerary",
+      "delhi-to-kasauli-2-day-itinerary"
+    ],
+    "relatedTools": [
+      "weekend-trip-finder",
+      "weekend-trip-budget",
+      "road-trip-cost-calculator",
+      "fuel-required-calculator",
+      "weekend-packing-list"
+    ],
+    "seoTitle": "Delhi to Neemrana 1-Day Itinerary",
+    "seoDescription": "Plan a Delhi to Neemrana day trip with a practical itinerary, budget bands and travel tips. Estimates only."
+  }
+]

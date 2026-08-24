@@ -8,7 +8,7 @@ import {
   matchesDestinationFilters,
   type DestinationCardData,
   type DestinationDirectoryFilters,
-} from "@/lib/data/destinations";
+} from "@/lib/data/destinations/catalog";
 import {
   destinationBudgetLabels,
   destinationDurationLabels,

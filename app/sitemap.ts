@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { getLiveTools } from "@/lib/tools/catalog";
-import { destinationGuides } from "@/lib/data/destinations";
-import { itineraries } from "@/lib/data/itineraries";
+import { getAllDestinationGuides } from "@/lib/data/destinations";
+import { getAllItineraries } from "@/lib/data/itineraries";
 
 const publicRoutes = [
   "/",
@@ -36,14 +36,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const destinationPages = destinationGuides.map((destination) => ({
+  const destinationPages = getAllDestinationGuides().map((destination) => ({
     url: absoluteUrl(`/destinations/${destination.slug}`),
     lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const itineraryPages = itineraries.map((itinerary) => ({
+  const itineraryPages = getAllItineraries().map((itinerary) => ({
     url: absoluteUrl(`/itineraries/${itinerary.slug}`),
     lastModified,
     changeFrequency: "monthly" as const,

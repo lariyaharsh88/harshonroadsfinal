@@ -56,7 +56,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${sans.variable} h-full antialiased`}>
+    <html
+      lang="en-IN"
+      data-scroll-behavior="smooth"
+      className={`${sans.variable} h-full antialiased`}
+    >
       <body className="min-h-full bg-background font-sans text-foreground">
         <JsonLd />
         <SiteShell>{children}</SiteShell>

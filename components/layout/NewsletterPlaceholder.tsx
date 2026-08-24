@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/Card";
 
 export function NewsletterPlaceholder() {
   return (
-    <Card className="bg-surface-raised">
+    <Card interactive className="ai-panel border-blue/10">
       <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-blue">
         Newsletter
       </p>

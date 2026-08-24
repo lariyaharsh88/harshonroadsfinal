@@ -1,17 +1,27 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState } from "react";
 import { planWeekendAction } from "@/lib/ai/actions/plan-weekend";
 import type {
   TravelStyle,
   WeekendPlannerInput,
   WeekendPlannerResult,
 } from "@/lib/ai/schemas/weekend-planner";
-import { ChoiceButton } from "@/components/tools/weekend/ChoiceButton";
 import { ShareButton } from "@/components/tools/ShareButton";
-import { ToolInput } from "@/components/tools/ToolInput";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
+import {
+  AiChip,
+  AiDisclaimer,
+  AiError,
+  AiFieldRow,
+  AiGenerateButton,
+  AiInlineInput,
+  AiResultActions,
+  AiStyleChip,
+  AiToolShell,
+} from "@/components/tools/ai/shared/AiShell";
+import { AiPlannerFrame } from "@/components/tools/ai/shared/AiPlannerFrame";
 import {
   budgetLabels,
   groupLabels,
@@ -31,18 +41,6 @@ import {
   type GroupType,
   type Interest,
 } from "@/types/destination";
-
-const STEPS = [
-  "Where are you starting from?",
-  "How much time do you have?",
-  "What's your trip budget?",
-  "Who's travelling?",
-  "How are you getting there?",
-  "What are you in the mood for?",
-  "What's your travel style?",
-  "How far will you go?",
-  "Ready to plan?",
-] as const;
 
 const durationFormLabels: Record<(typeof tripDurations)[number], string> = {
   "day-trip": "1 day",
@@ -65,6 +63,14 @@ const travelStyleLabels: Record<TravelStyle, string> = {
   adventure: "Adventure",
   comfort: "Comfort",
   luxury: "Luxury",
+};
+
+const travelStyleHints: Record<TravelStyle, string> = {
+  budget: "Smart spends",
+  relaxed: "Slow pace",
+  adventure: "Active & bold",
+  comfort: "Easy stays",
+  luxury: "Premium picks",
 };
 
 type Draft = Partial<WeekendPlannerInput> & { interests: Interest[] };
@@ -109,37 +115,11 @@ function toInput(draft: Draft): WeekendPlannerInput | null {
   };
 }
 
-function stepReady(step: number, draft: Draft): boolean {
-  switch (step) {
-    case 0:
-      return Boolean(draft.origin);
-    case 1:
-      return Boolean(draft.duration);
-    case 2:
-      return Boolean(draft.budget);
-    case 3:
-      return Boolean(draft.group);
-    case 4:
-      return Boolean(draft.transport);
-    case 5:
-      return draft.interests.length > 0;
-    case 6:
-      return Boolean(draft.travelStyle);
-    case 7:
-      return Boolean(draft.maxTravelTime);
-    case 8:
-      return toInput(draft) !== null;
-    default:
-      return false;
-  }
-}
-
 function formatInr(amount: number): string {
   return `₹${Math.round(amount).toLocaleString("en-IN")}`;
 }
 
 export function AiWeekendPlanner() {
-  const [step, setStep] = useState(0);
   const [draft, setDraft] = useState<Draft>(emptyDraft);
   const [result, setResult] = useState<WeekendPlannerResult | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -147,11 +127,9 @@ export function AiWeekendPlanner() {
   const [shareUrl, setShareUrl] = useState("/tools/ai-weekend-planner");
 
   const input = useMemo(() => toInput(draft), [draft]);
-  const progress = ((step + 1) / STEPS.length) * 100;
 
   function reset() {
     setDraft(emptyDraft);
-    setStep(0);
     setResult(null);
     setError(null);
   }
@@ -198,10 +176,10 @@ export function AiWeekendPlanner() {
 
     return (
       <div className="print-results space-y-6">
-        <div className="no-print rounded-2xl border border-accent/30 bg-accent-soft px-5 py-4 text-sm leading-6 text-muted-strong">
+        <AiDisclaimer>
           Figures are estimated. Stay, roads, tickets and timings change.
           Verify before you travel. This plan is not a booking.
-        </div>
+        </AiDisclaimer>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
             Your weekend plan
@@ -213,52 +191,25 @@ export function AiWeekendPlanner() {
             {result.summary}
           </p>
         </div>
-        <div className="no-print flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <button
-            type="button"
-            onClick={() => {
-              setResult(null);
-              setStep(STEPS.length - 1);
-            }}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold"
-          >
-            Edit answers
-          </button>
-          <button
-            type="button"
-            disabled={pending}
-            onClick={() => {
-              void generate();
-            }}
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#fff8ef] disabled:opacity-40"
-          >
-            {pending ? "Regenerating…" : "Regenerate"}
-          </button>
-          <button
-            type="button"
-            onClick={reset}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold"
-          >
-            Start over
-          </button>
-          <button
-            type="button"
-            onClick={() => window.print()}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold"
-          >
-            Print
-          </button>
-          <ShareButton
-            title="HarshOnRoads AI Weekend Planner"
-            url={shareUrl}
-            text={shareText}
-          />
-        </div>
-        {error ? (
-          <p className="no-print text-sm text-accent" role="alert">
-            {error}
-          </p>
-        ) : null}
+        <AiResultActions
+          pending={pending}
+          onEdit={() => setResult(null)}
+          onRegenerate={() => {
+            void generate();
+          }}
+          onReset={reset}
+          regenerateLabel="Regenerate"
+          pendingLabel="Planning…"
+          print
+          share={
+            <ShareButton
+              title="HarshOnRoads AI Weekend Planner"
+              url={shareUrl}
+              text={shareText}
+            />
+          }
+        />
+        {error ? <AiError message={error} /> : null}
         <div className="space-y-6">
           {result.destinations.map((item, index) => (
             <article
@@ -375,246 +326,153 @@ export function AiWeekendPlanner() {
   }
 
   return (
-    <Card>
-      <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-blue">
-        Step {step + 1} of {STEPS.length}
-      </p>
-      <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-        {STEPS[step]}
-      </h2>
-      <div
-        className="mt-4 h-1 overflow-hidden rounded-full bg-border"
-        aria-hidden="true"
+    <AiPlannerFrame
+      pending={pending}
+      loadingContext={draft.origin ? originLabels[draft.origin] : "Delhi NCR"}
+      toolLabel="weekend planner"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void generate();
+      }}
+    >
+      <AiToolShell
+        title="Your trip, one brief"
+        hint="Set origin, time, budget and vibe — one generate. Estimates only, nothing saved."
+        footer={
+          <>
+            {error ? (
+              <AiError message={`${error} You can also use the Weekend Trip Finder.`} />
+            ) : null}
+            <AiGenerateButton
+              type="submit"
+              disabled={!input}
+              label="Generate my plan"
+              pendingLabel="Planning your weekend…"
+            />
+          </>
+        }
       >
-        <div
-          className="h-full bg-accent transition-[width] duration-300"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
-      <div className="mt-8">
-        {step === 0 ? (
-          <ChoiceGrid>
-            {origins.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.origin === value}
-                onClick={() => setDraft((current) => ({ ...current, origin: value }))}
-              >
-                {originLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        ) : null}
-        {step === 1 ? (
-          <ChoiceGrid>
-            {tripDurations.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.duration === value}
-                onClick={() =>
-                  setDraft((current) => ({ ...current, duration: value }))
-                }
-              >
-                {durationFormLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        ) : null}
-        {step === 2 ? (
-          <>
-            <ChoiceGrid>
-              {budgetRanges.map((value) => (
-                <ChoiceButton
-                  key={value}
-                  selected={draft.budget === value}
-                  onClick={() =>
-                    setDraft((current) => ({ ...current, budget: value }))
-                  }
-                >
-                  {budgetLabels[value]}
-                </ChoiceButton>
-              ))}
-            </ChoiceGrid>
-            <p className="mt-4 text-xs leading-5 text-muted">
-              Per person, stay + food + local travel. Estimated bands, not live
-              hotel quotes.
-            </p>
-          </>
-        ) : null}
-        {step === 3 ? (
-          <div className="space-y-6">
-            <ChoiceGrid>
-              {groups.map((value) => (
-                <ChoiceButton
-                  key={value}
-                  selected={draft.group === value}
-                  onClick={() =>
-                    setDraft((current) => ({
-                      ...current,
-                      group: value,
-                      peopleCount: current.peopleCount ?? defaultPeople(value),
-                    }))
-                  }
-                >
-                  {groupLabels[value]}
-                </ChoiceButton>
-              ))}
-            </ChoiceGrid>
-            <ToolInput
-              name="peopleCount"
-              label="Number of people"
-              value={String(draft.peopleCount ?? defaultPeople(draft.group))}
-              onChange={(value) => {
-                const parsed = Number.parseInt(value, 10);
-                setDraft((current) => ({
-                  ...current,
-                  peopleCount: Number.isFinite(parsed) ? parsed : undefined,
-                }));
-              }}
-              helper="Used only to scale packing and budget language. Nothing is saved."
-              min={1}
-              max={12}
-            />
-          </div>
-        ) : null}
-        {step === 4 ? (
-          <ChoiceGrid>
-            {transports.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.transport === value}
-                onClick={() =>
-                  setDraft((current) => ({ ...current, transport: value }))
-                }
-              >
-                {transportLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        ) : null}
-        {step === 5 ? (
-          <ChoiceGrid>
-            {interests.map((value) => (
-              <ChoiceButton
-                key={value}
-                multi
-                selected={draft.interests.includes(value)}
-                onClick={() => toggleInterest(value)}
-              >
-                {interestLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        ) : null}
-        {step === 6 ? (
-          <ChoiceGrid>
-            {travelStyles.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.travelStyle === value}
-                onClick={() =>
-                  setDraft((current) => ({ ...current, travelStyle: value }))
-                }
-              >
-                {travelStyleLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        ) : null}
-        {step === 7 ? (
-          <>
-            <ChoiceGrid>
-              {maxTravelTimes.map((value) => (
-                <ChoiceButton
-                  key={value}
-                  selected={draft.maxTravelTime === value}
-                  onClick={() =>
-                    setDraft((current) => ({ ...current, maxTravelTime: value }))
-                  }
-                >
-                  {travelTimeLabels[value]}
-                </ChoiceButton>
-              ))}
-            </ChoiceGrid>
-            <p className="mt-4 text-xs leading-5 text-muted">
-              One-way driving bands from Delhi NCR, not live traffic.
-            </p>
-          </>
-        ) : null}
-        {step === 8 && input ? (
-          <dl className="grid gap-3 text-sm sm:grid-cols-2">
-            <ReviewRow label="From" value={originLabels[input.origin]} />
-            <ReviewRow label="Time" value={durationFormLabels[input.duration]} />
-            <ReviewRow label="Budget" value={budgetLabels[input.budget]} />
-            <ReviewRow
-              label="Travellers"
-              value={`${groupLabels[input.group]} · ${input.peopleCount} people`}
-            />
-            <ReviewRow label="Transport" value={transportLabels[input.transport]} />
-            <ReviewRow
-              label="Interests"
-              value={input.interests.map((item) => interestLabels[item]).join(", ")}
-            />
-            <ReviewRow
-              label="Style"
-              value={travelStyleLabels[input.travelStyle]}
-            />
-            <ReviewRow
-              label="Max travel time"
-              value={travelTimeLabels[input.maxTravelTime]}
-            />
-          </dl>
-        ) : null}
-      </div>
-      {error ? (
-        <p className="mt-6 text-sm text-accent" role="alert">
-          {error} You can also use the Weekend Trip Finder.
-        </p>
-      ) : null}
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <button
-          type="button"
-          disabled={step === 0 || pending}
-          onClick={() => setStep((value) => Math.max(0, value - 1))}
-          className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold disabled:opacity-40"
-        >
-          Back
-        </button>
-        {step < STEPS.length - 1 ? (
-          <button
-            type="button"
-            disabled={!stepReady(step, draft)}
-            onClick={() => setStep((value) => value + 1)}
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#fff8ef] disabled:opacity-40"
+      <AiFieldRow label="Starting from">
+        {origins.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.origin === value}
+            onClick={() => setDraft((current) => ({ ...current, origin: value }))}
           >
-            Next
-          </button>
-        ) : (
-          <button
-            type="button"
-            disabled={!input || pending}
-            onClick={() => {
-              void generate();
-            }}
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#fff8ef] disabled:opacity-40"
-          >
-            {pending ? "Planning your weekend…" : "Generate trip"}
-          </button>
-        )}
-        <button
-          type="button"
-          onClick={reset}
-          className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold"
-        >
-          Start over
-        </button>
-      </div>
-    </Card>
-  );
-}
+            {originLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
 
-function ChoiceGrid({ children }: { children: ReactNode }) {
-  return <div className="grid gap-3 sm:grid-cols-2">{children}</div>;
+      <AiFieldRow label="Duration">
+        {tripDurations.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.duration === value}
+            onClick={() => setDraft((current) => ({ ...current, duration: value }))}
+          >
+            {durationFormLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Budget per person" hint="Stay + food + local travel. Estimated bands.">
+        {budgetRanges.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.budget === value}
+            onClick={() => setDraft((current) => ({ ...current, budget: value }))}
+          >
+            {budgetLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Who's going">
+        {groups.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.group === value}
+            onClick={() =>
+              setDraft((current) => ({
+                ...current,
+                group: value,
+                peopleCount: current.peopleCount ?? defaultPeople(value),
+              }))
+            }
+          >
+            {groupLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiInlineInput
+        label="People"
+        name="peopleCount"
+        type="number"
+        min={1}
+        max={12}
+        value={String(draft.peopleCount ?? defaultPeople(draft.group))}
+        onChange={(value) => {
+          const parsed = Number.parseInt(value, 10);
+          setDraft((current) => ({
+            ...current,
+            peopleCount: Number.isFinite(parsed) ? parsed : undefined,
+          }));
+        }}
+      />
+
+      <AiFieldRow label="Transport">
+        {transports.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.transport === value}
+            onClick={() => setDraft((current) => ({ ...current, transport: value }))}
+          >
+            {transportLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Interests">
+        {interests.map((value) => (
+          <AiChip
+            key={value}
+            multi
+            selected={draft.interests.includes(value)}
+            onClick={() => toggleInterest(value)}
+          >
+            {interestLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Travel style">
+        {travelStyles.map((value) => (
+          <AiStyleChip
+            key={value}
+            selected={draft.travelStyle === value}
+            onClick={() => setDraft((current) => ({ ...current, travelStyle: value }))}
+            label={travelStyleLabels[value]}
+            hint={travelStyleHints[value]}
+          />
+        ))}
+      </AiFieldRow>
+
+      <AiFieldRow label="Max drive time" hint="One-way from Delhi NCR. Not live traffic.">
+        {maxTravelTimes.map((value) => (
+          <AiChip
+            key={value}
+            selected={draft.maxTravelTime === value}
+            onClick={() => setDraft((current) => ({ ...current, maxTravelTime: value }))}
+          >
+            {travelTimeLabels[value]}
+          </AiChip>
+        ))}
+      </AiFieldRow>
+      </AiToolShell>
+    </AiPlannerFrame>
+  );
 }
 
 function ListBlock({ title, items }: { title: string; items: string[] }) {
@@ -628,15 +486,6 @@ function ListBlock({ title, items }: { title: string; items: string[] }) {
           <li key={item}>{item}</li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function ReviewRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl border border-border px-4 py-3">
-      <dt className="text-xs uppercase tracking-[0.14em] text-muted">{label}</dt>
-      <dd className="mt-1 font-semibold">{value}</dd>
     </div>
   );
 }

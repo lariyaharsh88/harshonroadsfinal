@@ -1,3 +1,4 @@
+import { HeaderScroll } from "@/components/layout/HeaderScroll";
 import { Container } from "@/components/ui/Container";
 import { DesktopNav } from "@/components/navigation/DesktopNav";
 import { Logo } from "@/components/navigation/Logo";
@@ -6,7 +7,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-xl">
+    <HeaderScroll>
       <Container className="flex h-[4.5rem] items-center justify-between gap-4">
         <Logo />
         <DesktopNav />
@@ -19,6 +20,6 @@ export function Header() {
           <MobileNav />
         </div>
       </Container>
-    </header>
+    </HeaderScroll>
   );
 }

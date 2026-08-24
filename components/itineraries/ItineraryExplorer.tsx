@@ -9,7 +9,7 @@ import {
   matchesItineraryFilters,
   type ItineraryCardData,
   type ItineraryDirectoryFilters,
-} from "@/lib/data/itineraries";
+} from "@/lib/data/itineraries/catalog";
 import {
   itineraryAudienceLabels,
   itineraryBudgetLabels,

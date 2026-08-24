@@ -15,10 +15,10 @@ export function Button({
 }: ButtonProps) {
   const styles = {
     primary:
-      "bg-foreground text-white hover:-translate-y-0.5 hover:bg-foreground/90",
-    lime: "bg-accent text-accent-ink hover:-translate-y-0.5 hover:bg-accent-hover",
+      "bg-foreground text-white hover:-translate-y-0.5 hover:bg-foreground/90 btn-cyan",
+    lime: "bg-lime text-white hover:-translate-y-0.5 hover:bg-lime-hover btn-glow",
     secondary:
-      "border border-border bg-surface text-foreground hover:-translate-y-0.5 hover:border-foreground/25 hover:bg-surface-raised",
+      "border border-border bg-surface text-foreground hover:-translate-y-0.5 hover:border-blue/30 hover:bg-blue-soft/40",
     ghost: "text-muted-strong hover:text-foreground",
   } as const;
 

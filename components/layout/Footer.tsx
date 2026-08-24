@@ -9,16 +9,17 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-surface">
       <Container className="py-14">
-        <div className="flex flex-col gap-6 rounded-[1.75rem] bg-foreground px-6 py-8 text-white sm:flex-row sm:items-end sm:justify-between sm:px-10 sm:py-10">
-          <div>
+        <div className="relative flex flex-col gap-6 overflow-hidden rounded-[1.75rem] bg-[linear-gradient(135deg,#0b1220_0%,#1e3a5f_45%,#0f766e_100%)] px-6 py-8 sm:flex-row sm:items-end sm:justify-between sm:px-10 sm:py-10">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(34,211,238,0.2),transparent_50%)]" />
+          <div className="relative">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
               Where next?
             </p>
-            <p className="mt-3 max-w-md font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <p className="mt-3 max-w-md font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Where are you going next?
             </p>
           </div>
-          <ButtonLink href="/tools/weekend-trip-finder" variant="lime">
+          <ButtonLink href="/tools/weekend-trip-finder" variant="lime" className="relative">
             Find My Weekend →
           </ButtonLink>
         </div>
@@ -50,7 +51,7 @@ export function Footer() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm text-muted hover:text-foreground"
+                        className="text-sm text-muted transition-colors hover:text-blue"
                       >
                         {item.label}
                       </Link>

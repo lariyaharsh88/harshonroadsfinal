@@ -12,7 +12,6 @@ import { ShareButton } from "@/components/tools/ShareButton";
 import { ToolInput } from "@/components/tools/ToolInput";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
-import { destinations } from "@/lib/tools/destinations";
 import { formatInr } from "@/lib/tools/engine";
 import {
   computeScenarioCost,
@@ -25,22 +24,17 @@ import {
   originLabels,
   transportLabels,
 } from "@/lib/tools/weekend-engine";
+import { transports, tripDurations } from "@/types/destination";
 import {
-  origins,
-  transports,
-  tripDurations,
-} from "@/types/destination";
+  AiError,
+  AiGenerateButton,
+  AiPromptInput,
+  AiToolShell,
+} from "@/components/tools/ai/shared/AiShell";
+import { AiPlannerFrame } from "@/components/tools/ai/shared/AiPlannerFrame";
 
 const exampleQuery =
   "Four friends from Noida are going to Rishikesh for 2 nights in a car.";
-
-const travelStyles = [
-  "budget",
-  "relaxed",
-  "adventure",
-  "comfort",
-  "luxury",
-] as const satisfies readonly TravelStyle[];
 
 const travelStyleLabels: Record<TravelStyle, string> = {
   budget: "Budget",
@@ -50,36 +44,18 @@ const travelStyleLabels: Record<TravelStyle, string> = {
   luxury: "Luxury",
 };
 
-const destinationOptions = [...destinations].sort((a, b) =>
-  a.name.localeCompare(b.name),
-);
-
 type Draft = {
   query: string;
-  origin?: TripCostEstimatorInput["origin"];
-  destinationSlug?: string;
-  duration?: TripCostEstimatorInput["duration"];
-  travellerCount: number;
-  transport?: TripCostEstimatorInput["transport"];
-  tripStyle?: TravelStyle;
 };
 
-const emptyDraft: Draft = { query: "", travellerCount: 4 };
+const emptyDraft: Draft = { query: "" };
 
 function toInput(draft: Draft): TripCostEstimatorInput | null {
   const query = draft.query.trim();
   if (query.length < 20) {
     return null;
   }
-  return {
-    query,
-    origin: draft.origin,
-    destinationSlug: draft.destinationSlug,
-    duration: draft.duration,
-    travellerCount: draft.travellerCount,
-    transport: draft.transport,
-    tripStyle: draft.tripStyle,
-  };
+  return { query };
 }
 
 function parseAmount(value: string): number {
@@ -517,190 +493,40 @@ export function AiTripCostEstimator() {
   }
 
   return (
-    <Card>
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-        Describe a trip
-      </p>
-      <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-        AI Trip Cost Estimator
-      </h2>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-        Type the trip in plain language. The estimator maps it to a
-        HarshOnRoads destination and returns Budget, Comfort and Higher Comfort
-        sketches. Figures are estimates, not current prices. Nothing is saved
-        and there is no login.
-      </p>
-
-      <label className="mt-8 block">
-        <span className="mb-2 block text-sm font-medium text-muted-strong">
-          Describe the trip
-        </span>
-        <textarea
+    <AiPlannerFrame
+      pending={pending}
+      loadingContext={draft.query}
+      toolLabel="cost estimator"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void generate();
+      }}
+    >
+      <AiToolShell
+        title="Your trip cost, one brief"
+        hint="Describe the trip once. AI returns Budget, Comfort and Higher Comfort sketches."
+        footer={
+          <>
+            {error ? <AiError message={error} /> : null}
+            <AiGenerateButton
+              type="submit"
+              disabled={!input}
+              label="Generate my plan"
+              pendingLabel="Estimating…"
+            />
+          </>
+        }
+      >
+        <AiPromptInput
           name="query"
+          label="Describe your trip"
           value={draft.query}
-          rows={5}
-          maxLength={1500}
+          onChange={(value) => setDraft({ query: value })}
           placeholder={exampleQuery}
-          autoComplete="off"
-          onChange={(event) =>
-            setDraft((current) => ({ ...current, query: event.target.value }))
-          }
-          className="w-full rounded-xl border border-border bg-background px-3 py-3 text-base text-foreground outline-none placeholder:text-muted/70 focus:border-foreground/30"
+          hint="Include origin, destination, nights, transport and group size."
+          rows={5}
         />
-        <span className="mt-1.5 block text-xs leading-5 text-muted">
-          At least 20 characters. Example: {exampleQuery}
-        </span>
-      </label>
-
-      <details className="mt-8 rounded-2xl border border-border px-4 py-4">
-        <summary className="cursor-pointer text-sm font-semibold">
-          Optional hints
-        </summary>
-        <p className="mt-3 text-xs leading-5 text-muted">
-          Leave blank if the description already covers it. Click a selected
-          option again to clear it.
-        </p>
-        <FilterBlock title="Starting location">
-          <ChoiceGrid>
-            {origins.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.origin === value}
-                onClick={() =>
-                  setDraft((current) => ({
-                    ...current,
-                    origin: current.origin === value ? undefined : value,
-                  }))
-                }
-              >
-                {originLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        </FilterBlock>
-        <FilterBlock title="Destination">
-          <ChoiceGrid>
-            {destinationOptions.map((item) => (
-              <ChoiceButton
-                key={item.slug}
-                selected={draft.destinationSlug === item.slug}
-                onClick={() =>
-                  setDraft((current) => ({
-                    ...current,
-                    destinationSlug:
-                      current.destinationSlug === item.slug
-                        ? undefined
-                        : item.slug,
-                  }))
-                }
-              >
-                {item.name}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        </FilterBlock>
-        <FilterBlock title="Duration">
-          <ChoiceGrid>
-            {tripDurations.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.duration === value}
-                onClick={() =>
-                  setDraft((current) => ({
-                    ...current,
-                    duration: current.duration === value ? undefined : value,
-                  }))
-                }
-              >
-                {durationLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        </FilterBlock>
-        <FilterBlock title="Transport">
-          <ChoiceGrid>
-            {transports.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.transport === value}
-                onClick={() =>
-                  setDraft((current) => ({
-                    ...current,
-                    transport:
-                      current.transport === value ? undefined : value,
-                  }))
-                }
-              >
-                {transportLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        </FilterBlock>
-        <FilterBlock title="Trip style">
-          <ChoiceGrid>
-            {travelStyles.map((value) => (
-              <ChoiceButton
-                key={value}
-                selected={draft.tripStyle === value}
-                onClick={() =>
-                  setDraft((current) => ({
-                    ...current,
-                    tripStyle: current.tripStyle === value ? undefined : value,
-                  }))
-                }
-              >
-                {travelStyleLabels[value]}
-              </ChoiceButton>
-            ))}
-          </ChoiceGrid>
-        </FilterBlock>
-        <div className="mt-6 max-w-xs">
-          <ToolInput
-            name="travellerCount"
-            label="Travellers"
-            value={String(draft.travellerCount)}
-            min={1}
-            max={12}
-            step={1}
-            helper="Optional. The description can also supply the count."
-            onChange={(value) =>
-              setDraft((current) => ({
-                ...current,
-                travellerCount: Math.min(
-                  12,
-                  Math.max(1, Math.round(parseAmount(value) || 1)),
-                ),
-              }))
-            }
-          />
-        </div>
-      </details>
-
-      {error ? (
-        <p className="mt-6 text-sm text-accent" role="alert">
-          {error}
-        </p>
-      ) : null}
-
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <button
-          type="button"
-          disabled={!input || pending}
-          onClick={() => {
-            void generate();
-          }}
-          className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#fff8ef] disabled:opacity-40"
-        >
-          {pending ? "Estimating…" : "Estimate trip cost"}
-        </button>
-        <button
-          type="button"
-          onClick={reset}
-          className="inline-flex min-h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold"
-        >
-          Clear
-        </button>
-      </div>
-    </Card>
+      </AiToolShell>
+    </AiPlannerFrame>
   );
 }
