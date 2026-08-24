@@ -1,0 +1,58 @@
+import "server-only";
+
+export {
+  AI_LIMITS,
+  AiError,
+  toAiFailure,
+  type AiErrorCode,
+  type AiFailure,
+  type AiResult,
+  type AiSuccess,
+} from "@/lib/ai/errors";
+export { isAiConfigured } from "@/lib/ai/client";
+export {
+  itineraryGeneratorInputSchema,
+  itineraryGeneratorResultSchema,
+  itinerarySchema,
+  packingListSchema,
+  aiPackingListInputSchema,
+  aiPackingListResultSchema,
+  travelContentSchema,
+  travelContentCreatorInputSchema,
+  travelContentCreatorResultSchema,
+  tripCostEstimatorInputSchema,
+  tripCostEstimatorResultSchema,
+  tripBudgetSchema,
+  tripFinderInputSchema,
+  tripFinderResultSchema,
+  tripRecommendationSchema,
+  weekendPlanSchema,
+  weekendPlannerInputSchema,
+  weekendPlannerResultSchema,
+  type Itinerary,
+  type ItineraryDay,
+  type ItineraryGeneratorInput,
+  type ItineraryGeneratorResult,
+  type PackingList,
+  type AiPackingListInput,
+  type AiPackingListResult,
+  type TravelContent,
+  type TravelContentCreatorInput,
+  type TravelContentCreatorResult,
+  type TripCostEstimatorInput,
+  type TripCostEstimatorResult,
+  type TripBudget,
+  type TripFinderInput,
+  type TripFinderResult,
+  type TripRecommendation,
+  type WeekendPlan,
+  type WeekendPlannerInput,
+  type WeekendPlannerResult,
+} from "@/lib/ai/schemas";
+export { generateStructured } from "@/lib/ai/service";
+export {
+  assertDestinationCount,
+  assertItineraryDays,
+  assertPromptLength,
+  clipText,
+} from "@/lib/ai/utils";
